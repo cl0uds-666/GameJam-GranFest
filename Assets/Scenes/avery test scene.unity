@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 172303354}
   - component: {fileID: 172303356}
   - component: {fileID: 172303357}
+  - component: {fileID: 172303358}
   m_Layer: 0
   m_Name: Car(1)
   m_TagString: Untagged
@@ -336,6 +337,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &172303358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172303353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e731827de3e270944b456cfb74f2d69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardSpeed: 5
+  turnSpeed: 200
 --- !u!1 &244157234
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +457,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 172303358}
+          m_TargetAssemblyTypeName: CarControllerRB, Assembly-CSharp
+          m_MethodName: TurnLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -449,6 +476,18 @@ MonoBehaviour:
         - m_Target: {fileID: 172303356}
           m_TargetAssemblyTypeName: rigidbodymovementtest, Assembly-CSharp
           m_MethodName: StopMoving
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 172303358}
+          m_TargetAssemblyTypeName: CarControllerRB, Assembly-CSharp
+          m_MethodName: StopTurning
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1350,6 +1389,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 172303358}
+          m_TargetAssemblyTypeName: CarControllerRB, Assembly-CSharp
+          m_MethodName: TurnRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -1357,6 +1408,18 @@ MonoBehaviour:
         - m_Target: {fileID: 172303356}
           m_TargetAssemblyTypeName: rigidbodymovementtest, Assembly-CSharp
           m_MethodName: StopMoving
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 172303358}
+          m_TargetAssemblyTypeName: CarControllerRB, Assembly-CSharp
+          m_MethodName: StopTurning
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

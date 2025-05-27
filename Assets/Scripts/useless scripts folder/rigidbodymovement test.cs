@@ -21,6 +21,7 @@ public class rigidbodymovementtest : MonoBehaviour
     void Update()
     {
         carRigid.velocity = MOVEMENT_RGBDY;
+
     }
 
     // Called when Left button is pressed
