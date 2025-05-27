@@ -27,11 +27,13 @@ public class CarControllerRB : MonoBehaviour
 
     public void TurnLeft()
     {
+        Debug.Log("TurningLeft");
         turnDirection = -1f;
     }
 
     public void TurnRight()
     {
+        Debug.Log("TurningRight");
         turnDirection = 1f;
     }
 
