@@ -20,31 +20,18 @@ public class rigidbodymovementtest : MonoBehaviour
     }
     void Update()
     {
-        // Constant forward movement (uo screen)
-        //transform.Translate(Vector3.up * forwardSpeed * Time.deltaTime);
-
-        // Apply horizontal movement
-        //transform.Translate(Vector3.right * horizontalInput * horizontalSpeed * Time.deltaTime);
-
-        //carRigid.velocity += (Vector2.up * forwardSpeed * Time.deltaTime);
         carRigid.velocity = MOVEMENT_RGBDY;
-        //Debug.Log("velocity is" + carRigid.velocity);
     }
 
     // Called when Left button is pressed
     public void MoveLeft()
     {
-        //horizontalInput = -1f;
-        //just adding velocity to the left based on the movement speed
-        //carRigid.velocity += (Vector2.left * horizontalSpeed);
         MOVEMENT_RGBDY += (Vector2.left * horizontalSpeed);
     }
 
     // Called when Right button is pressed
     public void MoveRight()
     {
-        //just adding velocity to the right based on the movement speed
-        //carRigid.velocity += (Vector2.right * horizontalSpeed);
         MOVEMENT_RGBDY -= (Vector2.left * horizontalSpeed);
     }
 
@@ -54,6 +41,5 @@ public class rigidbodymovementtest : MonoBehaviour
         //setting velocity to 0 to stop the car
         Debug.Log("movement stopped innit");
         MOVEMENT_RGBDY.x = 0;
-        //horizontalInput = 0f;
     }
 }
