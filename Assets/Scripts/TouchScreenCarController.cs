@@ -52,7 +52,7 @@ public class TouchscreenCarZoneController : MonoBehaviour
             }
 
             //for mouse detection (why is ur code so perfect bruh :O)
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 if(ScreenZoneContains(zone.leftZone, new Vector2(Input.mousePosition.x, Input.mousePosition.y)))
                 {
