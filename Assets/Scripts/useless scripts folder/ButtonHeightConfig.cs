@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 [RequireComponent(typeof(TouchSimulation))]
 
@@ -37,18 +38,18 @@ public class ButtonHeightConfig : MonoBehaviour
     void Update()
     {
 		//if there are still buttons to go in the list then move the button position of this button
-		if(buttonsPos != (Buttons.Length - 1))
+		if(buttonsIndex != (Buttons.Length - 1))
 		//if you touch with one finger, it gets the position of where you touch on the screen and moves the button to that location
         if (Touch.activeFingers.Count == 1)
 			{
 				Vector3 newPos = Camera.main.ScreenToWorldPoint(Touch.activeTouches[0].screenPosition);
                 newPos = new Vector3(newPos.x, newPos.y, 0f);
-				buttons[buttonsIndex].transform.position = newPos;
+				Buttons[buttonsIndex].transform.position = newPos;
 				buttonsIndex += 1;
 			}
 		else
 		{
-			buttonsIndex = 0
+				buttonsIndex = 0;
 		}
     }
 }
