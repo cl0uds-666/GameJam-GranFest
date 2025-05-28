@@ -4,11 +4,17 @@ using UnityEngine;
 public class CarControllerRB : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField] private float forwardSpeed = 5f;
-    [SerializeField] private float turnSpeed = 200f;
+    [SerializeField] public float forwardSpeed = 5f;
+    [SerializeField] public float turnSpeed = 200f;
 
     private float turnDirection = 0f;
     private Rigidbody2D rb;
+
+    [Header("Spin")]
+    [SerializeField] private float spinTimer = 0f;
+    [SerializeField] private float spinDuration = 0.5f;
+    [SerializeField] private bool isSpinning = false;
+    private Vector2 spinDirection; //New: direction locked during spin
 
     void Awake()
     {
@@ -17,12 +23,34 @@ public class CarControllerRB : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Forward movement
-        rb.velocity = transform.up * forwardSpeed;
+        if (isSpinning)
+        {
+            spinTimer -= Time.fixedDeltaTime;
+            if (spinTimer <= 0f)
+            {
+                isSpinning = false;
+                rb.angularVelocity = 0f; // stop the spin
+            }
 
-        // Rotation
+            // Maintain original direction while spinning
+            rb.velocity = spinDirection * forwardSpeed;
+            return; // skip normal movement/steering
+        }
+
+        // Normal movement
+        rb.velocity = transform.up * forwardSpeed;
         float rotationAmount = -turnDirection * turnSpeed * Time.fixedDeltaTime;
         rb.MoveRotation(rb.rotation + rotationAmount);
+    }
+
+    public void ApplySpin(float torque)
+    {
+        rb.AddTorque(torque, ForceMode2D.Impulse);
+        isSpinning = true;
+        spinTimer = spinDuration;
+
+        // Lock in current movement direction
+        spinDirection = rb.velocity.normalized;
     }
 
     public void TurnLeft()

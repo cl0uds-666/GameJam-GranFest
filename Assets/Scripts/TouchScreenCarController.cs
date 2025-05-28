@@ -51,6 +51,25 @@ public class TouchscreenCarZoneController : MonoBehaviour
                 }
             }
 
+            //for mouse detection (why is ur code so perfect bruh :O)
+            if (Input.GetMouseButton(0))
+            {
+                if(ScreenZoneContains(zone.leftZone, new Vector2(Input.mousePosition.x, Input.mousePosition.y)))
+                {
+                    zone.car.TurnLeft();
+                    isTurning = true;
+                    Debug.Log("touchingleft");
+                    break;
+                }
+                else if (ScreenZoneContains(zone.rightZone, new Vector2(Input.mousePosition.x, Input.mousePosition.y)))
+                {
+                    zone.car.TurnRight();
+                    isTurning = true;
+                    Debug.Log("touchingright");
+                    break;
+                }
+            }
+
             // If no touches in either zone, stop turning
             if (!isTurning)
             {
