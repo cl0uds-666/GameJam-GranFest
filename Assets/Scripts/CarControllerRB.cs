@@ -4,8 +4,8 @@ using UnityEngine;
 public class CarControllerRB : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField] private float forwardSpeed = 5f;
-    [SerializeField] private float turnSpeed = 200f;
+    [SerializeField] public float forwardSpeed = 5f;
+    [SerializeField] public float turnSpeed = 200f;
 
     private float turnDirection = 0f;
     private Rigidbody2D rb;
