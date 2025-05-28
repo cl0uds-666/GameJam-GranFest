@@ -158,7 +158,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TyreStack_Temp_0: 1861297636301057249
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
