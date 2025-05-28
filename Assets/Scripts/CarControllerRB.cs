@@ -14,8 +14,7 @@ public class CarControllerRB : MonoBehaviour
     [SerializeField] private float spinTimer = 0f;
     [SerializeField] private float spinDuration = 0.5f;
     [SerializeField] private bool isSpinning = false;
-
-
+    private Vector2 spinDirection; //New: direction locked during spin
 
     void Awake()
     {
@@ -32,8 +31,10 @@ public class CarControllerRB : MonoBehaviour
                 isSpinning = false;
                 rb.angularVelocity = 0f; // stop the spin
             }
-            rb.velocity = transform.up * forwardSpeed * 0.5f; // reduced speed while spinning
-            return; // skip normal turning
+
+            // Maintain original direction while spinning
+            rb.velocity = spinDirection * forwardSpeed;
+            return; // skip normal movement/steering
         }
 
         // Normal movement
@@ -47,7 +48,11 @@ public class CarControllerRB : MonoBehaviour
         rb.AddTorque(torque, ForceMode2D.Impulse);
         isSpinning = true;
         spinTimer = spinDuration;
+
+        // Lock in current movement direction
+        spinDirection = rb.velocity.normalized;
     }
+
     public void TurnLeft()
     {
         Debug.Log("TurningLeft");
