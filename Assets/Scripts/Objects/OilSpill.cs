@@ -3,8 +3,9 @@ using UnityEngine;
 public class OilSpill : MonoBehaviour
 {
     [SerializeField] private float spinForce = 300f;
+    [SerializeField] private bool destroyOnUse = false;
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
 
@@ -12,7 +13,22 @@ public class OilSpill : MonoBehaviour
         if (rb)
         {
             float torque = Random.Range(-spinForce, spinForce);
-            rb.AddTorque(torque, ForceMode2D.Impulse);
+            CarControllerRB controller = rb.GetComponent<CarControllerRB>();
+            if (controller != null)
+            {
+                controller.ApplySpin(torque);
+            }
+            else
+            {
+                rb.AddTorque(torque, ForceMode2D.Impulse); // fallback
+            }
+            Debug.Log($"Oil spill hit! Spinning player with torque: {torque}");
+        }
+
+
+        if (destroyOnUse)
+        {
+            Destroy(gameObject);
         }
     }
 }
