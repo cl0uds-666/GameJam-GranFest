@@ -16,4 +16,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip Bump;
     public AudioClip Screech;
     public AudioClip Explode;
+    public AudioClip OilSlip;
+    public AudioClip CrowdCheer;
+    public AudioClip IdleStartNoise;
 }
