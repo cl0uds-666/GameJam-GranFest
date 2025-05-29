@@ -27,10 +27,10 @@ codey.wilson23@my.northampton.ac.uk
 
 CONTRIBUTERS
 =====================
-Alice Haydon-Grime
-Luna Lin Gao
-Joshua Cossar
-Dawid Galka-Wozniak
-Matt Thompson
-Codey Wilson
-Avery Robin Coleman
+-Alice Haydon-Grime
+-Luna Lin Gao
+-Joshua Cossar
+-Dawid Galka-Wozniak
+-Matt Thompson
+-Codey Wilson
+-Avery Robin Coleman
