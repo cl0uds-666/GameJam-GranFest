@@ -77,6 +77,20 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    // deducts points from a specific player
+    public void DeductScore(int playerIndex, int amount)
+    {
+        if (playerIndex >= 0 && playerIndex < playerScores.Length)
+        {
+            playerScores[playerIndex] = Mathf.Max(0, playerScores[playerIndex] - amount);
+            if (PlayerScoreText[playerIndex] != null)
+            {
+                PlayerScoreText[playerIndex].GetComponent<TMP_Text>().text = playerScores[playerIndex].ToString();
+            }
+        }
+    }
+
+
     // returns the player GameObject currently leading the score
     public GameObject GetHighscorePlayer()
     {

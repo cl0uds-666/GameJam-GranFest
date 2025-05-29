@@ -44,6 +44,14 @@ public class RollingTyre : MonoBehaviour
                     playerRb.AddForce(rb.velocity.normalized * 5f, ForceMode2D.Impulse);
                 }
             }
+
+            ScoreManager sm = FindFirstObjectByType<ScoreManager>();
+            int index = PlayerUtils.GetPlayerIndex(other.gameObject);
+            if (sm != null && index >= 0)
+            {
+                sm.DeductScore(index, 2);
+            }
+
         }
 
         Destroy(gameObject);

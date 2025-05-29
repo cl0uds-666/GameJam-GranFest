@@ -8646,7 +8646,7 @@ MonoBehaviour:
       y: 0
       width: 0.125
       height: 1
-  showDebugZones: 0
+  showDebugZones: 1
 --- !u!4 &1948123352
 Transform:
   m_ObjectHideFlags: 0
