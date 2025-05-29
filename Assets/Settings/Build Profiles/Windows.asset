@@ -34,8 +34,8 @@ MonoBehaviour:
     - line: '|   targetDevice: 2'
     - line: '|   useOnDemandResources: 0'
     - line: '|   accelerometerFrequency: 60'
-    - line: '|   companyName: DefaultCompany'
-    - line: '|   productName: Granfest Gamejam'
+    - line: '|   companyName: SlopGames'
+    - line: '|   productName: Formula Gran Bonanza'
     - line: '|   defaultCursor: {instanceID: 0}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
     - line: '|   m_SplashScreenBackgroundColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754,
