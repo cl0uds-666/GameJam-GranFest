@@ -79,14 +79,17 @@ public class IdleScreenManager : MonoBehaviour
 
         // Traffic light sequence
         redLight.SetActive(true);
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().IdleStartNoise);
         yield return new WaitForSeconds(1f);
         redLight.SetActive(false);
 
         yellowLight.SetActive(true);
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().IdleStartNoise);
         yield return new WaitForSeconds(1f);
         yellowLight.SetActive(false);
 
         greenLight.SetActive(true);
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().IdleStartNoise);
         yield return new WaitForSeconds(1f);
         greenLight.SetActive(false);
 
