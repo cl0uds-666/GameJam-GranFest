@@ -12,6 +12,7 @@ public class CarControllerRB : MonoBehaviour
 
     private float turnDirection = 0f;
     private Rigidbody2D rb;
+    private bool isCollidingWithTrigger;
 
     void Awake()
     {
@@ -31,6 +32,12 @@ public class CarControllerRB : MonoBehaviour
         // Rotation
         float rotationAmount = -turnDirection * turnSpeed * Time.fixedDeltaTime;
         rb.MoveRotation(rb.rotation + rotationAmount);
+
+        if (isCollidingWithTrigger)
+        {
+            MainCamera.GetComponent<CameraMovement>().CameraTurn(90, gameObject);
+            isCollidingWithTrigger = true;
+        }
     }
 
     //on trigger call camera turn from camera movement script
@@ -41,13 +48,13 @@ public class CarControllerRB : MonoBehaviour
 
     public void TurnLeft()
     {
-        Debug.Log("TurningLeft");
+        //Debug.Log("TurningLeft");
         turnDirection = -1f;
     }
 
     public void TurnRight()
     {
-        Debug.Log("TurningRight");
+        //Debug.Log("TurningRight");
         turnDirection = 1f;
     }
 

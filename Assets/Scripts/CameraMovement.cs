@@ -7,7 +7,10 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]public GameObject HighscoreCar;
     [SerializeField]public Vector3 offset = new Vector3(0f, 0f, -10f);
     [SerializeField]public float smoothTime = 0.25f;
+    [SerializeField] public float rotateTime = 0.75f;
     [SerializeField]private Transform target;
+
+    public bool IsRotate = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +22,22 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         CameraFollow(HighscoreCar);
+        //if the car in the front touches the trigger then it rotates
+        if (IsRotate)
+        {
+            Quaternion currentRotation = gameObject.transform.rotation;
+            //i don't get quaternions at all :(
+            Quaternion targetLocation = Quaternion.Euler(0, 0, 90);
+
+            gameObject.transform.rotation = Quaternion.Slerp(currentRotation, targetLocation, rotateTime * Time.deltaTime);
+            Debug.Log("currentRotation:" + currentRotation.eulerAngles);
+            if(currentRotation.eulerAngles == targetLocation.eulerAngles)
+            {
+                Debug.Log("finished rotating");
+                IsRotate = false;
+            }
+        }
+        //gameObject.transform.Rotate(new Vector3(0, 0, TurnDegrees));
     }
 
     public void CameraFollow(GameObject player)
@@ -33,13 +52,14 @@ public class CameraMovement : MonoBehaviour
     //should just rotate the camera when it hits the trigger by how many degrees you enter for now
     public void CameraTurn(float TurnDegrees, GameObject Car)
     {
+        //if the car in the front touches the trigger then it rotates
         if (Car == HighscoreCar)
         {
-            Quaternion currentRotation;
+            Quaternion currentRotation = gameObject.transform.rotation;
             //i don't get quaternions at all :(
-            //Quaternion targetLocation = (0, 0, TurnDegrees); 
-			
-			
+            Quaternion targetLocation = Quaternion.Euler(0, 0, TurnDegrees);
+
+            gameObject.transform.rotation = Quaternion.Slerp(currentRotation, targetLocation, rotateTime);
             //gameObject.transform.Rotate(new Vector3(0, 0, TurnDegrees));
 
         }

@@ -58,14 +58,12 @@ public class TouchscreenCarZoneController : MonoBehaviour
                 {
                     zone.car.TurnLeft();
                     isTurning = true;
-                    Debug.Log("touchingleft");
                     break;
                 }
                 else if (ScreenZoneContains(zone.rightZone, new Vector2(Input.mousePosition.x, Input.mousePosition.y)))
                 {
                     zone.car.TurnRight();
                     isTurning = true;
-                    Debug.Log("touchingright");
                     break;
                 }
             }
