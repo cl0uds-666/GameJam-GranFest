@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
-public class TouchscreenCarZoneController : MonoBehaviour
+public class TouchScreenCarController : MonoBehaviour
 {
     // Defines the touch zones (left/right) for a specific car
     [System.Serializable]
