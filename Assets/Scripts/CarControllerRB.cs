@@ -4,6 +4,7 @@ using UnityEngine;
 public class CarControllerRB : MonoBehaviour
 {
     [Header("Movement Settings")]
+    [SerializeField] private bool canControl = true;
     [SerializeField] public float forwardSpeed = 5f;
     [SerializeField] public float turnSpeed = 200f;
 
@@ -26,6 +27,9 @@ public class CarControllerRB : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!canControl) return;
+
+
         if (speedRestoreTimer > 0f)
         {
             speedRestoreTimer -= Time.fixedDeltaTime;
@@ -53,6 +57,17 @@ public class CarControllerRB : MonoBehaviour
         rb.velocity = transform.up * forwardSpeed;
         float rotationAmount = -turnDirection * turnSpeed * Time.fixedDeltaTime;
         rb.MoveRotation(rb.rotation + rotationAmount);
+    }
+
+    public void SetControlEnabled(bool enabled)
+    {
+        canControl = enabled;
+
+        if (!enabled)
+        {
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
     }
 
     public void ApplyTemporarySlow(float newSpeed, float duration)

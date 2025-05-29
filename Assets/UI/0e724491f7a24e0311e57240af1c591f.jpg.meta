@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 878f22c9d95d5464c9489be10c8b9898
+guid: 96eba7b4e8f709944aca35111afbc46d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2222148994661481503
-    second: Rolling_Tire1_0
+      213: -2039265826410635029
+    second: 0e724491f7a24e0311e57240af1c591f_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rolling_Tire1_0
+      name: 0e724491f7a24e0311e57240af1c591f_0
       rect:
         serializedVersion: 2
-        x: 86
-        y: 83
-        width: 712
-        height: 317
+        x: 0
+        y: 0
+        width: 735
+        height: 752
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1cf9c8bcb8a6de10800000000000000
-      internalID: 2222148994661481503
+      spriteID: be0633e098213b3e0800000000000000
+      internalID: -2039265826410635029
       vertices: []
       indices: 
       edges: []
@@ -151,15 +151,14 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Rolling_Tire1_0: 2222148994661481503
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
