@@ -30,9 +30,9 @@ public class AudioManager : MonoBehaviour
 
     public void Update()
     {
-        CarSource1.pitch = GameObject.Find("Car_1").GetComponent<CarControllerRB>().forwardSpeed;
-        CarSource2.pitch = GameObject.Find("Car_2").GetComponent<CarControllerRB>().forwardSpeed;
-        CarSource3.pitch = GameObject.Find("Car_3").GetComponent<CarControllerRB>().forwardSpeed;
-        CarSource4.pitch = GameObject.Find("Car_4").GetComponent<CarControllerRB>().forwardSpeed;
+        CarSource1.pitch = GameObject.Find("Racing_Cars_Asset 1").GetComponent<CarControllerRB>().forwardSpeed / 5;
+        CarSource2.pitch = GameObject.Find("Racing_Cars_Asset 2").GetComponent<CarControllerRB>().forwardSpeed / 5;
+        CarSource3.pitch = GameObject.Find("Racing_Cars_Asset 3").GetComponent<CarControllerRB>().forwardSpeed / 5;
+        CarSource4.pitch = GameObject.Find("Racing_Cars_Asset 4").GetComponent<CarControllerRB>().forwardSpeed / 5;
     }
 }
