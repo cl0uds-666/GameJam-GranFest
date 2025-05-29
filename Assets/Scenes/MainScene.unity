@@ -951,7 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e731827de3e270944b456cfb74f2d69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 2
+  forwardSpeed: 5
   turnSpeed: 200
   spinTimer: 0
   spinDuration: 2
@@ -1950,7 +1950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f91c3abfd063a4db3185fa5149387e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HighscoreCar: {fileID: 0}
+  HighscoreCar: {fileID: 1679751828}
   offset: {x: 0, y: 0, z: -10}
   smoothFactor: 0.1
 --- !u!1 &519516571
@@ -2433,7 +2433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e731827de3e270944b456cfb74f2d69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 2
+  forwardSpeed: 5
   turnSpeed: 200
   spinTimer: 0
   spinDuration: 2
@@ -5185,7 +5185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e731827de3e270944b456cfb74f2d69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 2
+  forwardSpeed: 5
   turnSpeed: 200
   spinTimer: 0
   spinDuration: 2
@@ -6167,7 +6167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carZones:
-  - car: {fileID: 0}
+  - car: {fileID: 1679751830}
     leftZone:
       serializedVersion: 2
       x: 0
@@ -6180,7 +6180,7 @@ MonoBehaviour:
       y: 0
       width: 0.125
       height: 1
-  - car: {fileID: 0}
+  - car: {fileID: 198398430}
     leftZone:
       serializedVersion: 2
       x: 0.25
@@ -6193,7 +6193,7 @@ MonoBehaviour:
       y: 0
       width: 0.125
       height: 1
-  - car: {fileID: 0}
+  - car: {fileID: 2105838300}
     leftZone:
       serializedVersion: 2
       x: 0.5
@@ -6206,7 +6206,7 @@ MonoBehaviour:
       y: 0
       width: 0.125
       height: 1
-  - car: {fileID: 0}
+  - car: {fileID: 593690823}
     leftZone:
       serializedVersion: 2
       x: 0.75
@@ -6219,7 +6219,7 @@ MonoBehaviour:
       y: 0
       width: 0.125
       height: 1
-  showDebugZones: 1
+  showDebugZones: 0
 --- !u!4 &1948123352
 Transform:
   m_ObjectHideFlags: 0
@@ -6883,7 +6883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e731827de3e270944b456cfb74f2d69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 2
+  forwardSpeed: 5
   turnSpeed: 200
   spinTimer: 0
   spinDuration: 2
