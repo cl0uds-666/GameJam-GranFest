@@ -1250,6 +1250,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 3
+  turnSpeed: 200
+  reachDistance: 0.5
+  waypoints:
+  - {fileID: 0}
 --- !u!1 &211210910
 GameObject:
   m_ObjectHideFlags: 0
@@ -3171,6 +3175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 3
+  turnSpeed: 200
+  reachDistance: 0.5
+  waypoints: []
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -7212,6 +7219,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 3
+  turnSpeed: 200
+  reachDistance: 0.5
+  waypoints:
+  - {fileID: 0}
 --- !u!1 &1688762718
 GameObject:
   m_ObjectHideFlags: 0
@@ -9438,6 +9449,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 3
+  turnSpeed: 200
+  reachDistance: 0.5
+  waypoints: []
 --- !u!1 &2147468359
 GameObject:
   m_ObjectHideFlags: 0
@@ -9823,3 +9837,10 @@ SceneRoots:
   - {fileID: 593690826}
   - {fileID: 1022474332}
   - {fileID: 1596289422}
+  - {fileID: 588495583}
+  - {fileID: 47589189}
+  - {fileID: 941918989}
+  - {fileID: 1410385162}
+  - {fileID: 506899309}
+  - {fileID: 1709763328}
+  - {fileID: 1718841216}
