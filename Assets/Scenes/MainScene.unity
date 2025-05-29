@@ -281,8 +281,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4c9c412a16af9cb4693c5092b0a783f2, type: 3}
-  m_Resource: {fileID: 8300000, guid: 4c9c412a16af9cb4693c5092b0a783f2, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -721,10 +721,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
-  m_Resource: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.18
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3228,10 +3228,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
-  m_Resource: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.18
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4458,7 +4458,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.18
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5063,10 +5063,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 0}
-  CarSource1: {fileID: 0}
-  CarSource2: {fileID: 0}
-  CarSource3: {fileID: 0}
-  CarSource4: {fileID: 0}
   SFXSource: {fileID: 0}
   BGM: {fileID: 0}
   EngineRev: {fileID: 0}
@@ -6267,7 +6263,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.18
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7110,4 +7106,4 @@ SceneRoots:
   - {fileID: 8496663770027951453}
   - {fileID: 7979559716058037861}
   - {fileID: 671258932}
-  - {fileID: 1655941521}
+
