@@ -3175,6 +3175,8 @@ MonoBehaviour:
   - {fileID: 8187682630063800382, guid: 7d787c529cef53f4cbf164cf01004395, type: 3}
   - {fileID: 8187682630063800382, guid: c26a05be60a981444b0ccf7cf0fcd8c7, type: 3}
   - {fileID: 5863861054339413568, guid: f35e941ee86daf24ea064925cd6afc84, type: 3}
+  - {fileID: 5863861054339413568, guid: f35e941ee86daf24ea064925cd6afc84, type: 3}
+  - {fileID: 5863861054339413568, guid: f35e941ee86daf24ea064925cd6afc84, type: 3}
   spawnPoints:
   - {fileID: 1741425866}
   - {fileID: 1530650013}
