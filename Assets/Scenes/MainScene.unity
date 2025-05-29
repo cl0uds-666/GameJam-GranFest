@@ -434,8 +434,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4c9c412a16af9cb4693c5092b0a783f2, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4c9c412a16af9cb4693c5092b0a783f2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -566,7 +566,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -874,10 +874,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
+  m_Resource: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4658,10 +4658,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
+  m_Resource: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5978,10 +5978,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
+  m_Resource: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7000,22 +7000,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0cccf44765ab0340af1c98d1922bf48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 0}
-  CarSource1: {fileID: 0}
-  CarSource2: {fileID: 0}
-  CarSource3: {fileID: 0}
-  CarSource4: {fileID: 0}
-  SFXSource: {fileID: 0}
-  BGM: {fileID: 0}
-  EngineRev: {fileID: 0}
-  Bump: {fileID: 0}
-  Screech: {fileID: 0}
-  Explode: {fileID: 0}
-  OilSlip: {fileID: 0}
-  CrowdCheer: {fileID: 0}
-  CrowdCheer2: {fileID: 0}
-  CrowdCheer3: {fileID: 0}
-  IdleStartNoise: {fileID: 0}
+  musicSource: {fileID: 99816973}
+  CarSource1: {fileID: 946313887}
+  CarSource2: {fileID: 1399447118}
+  CarSource3: {fileID: 2052700411}
+  CarSource4: {fileID: 154984988}
+  SFXSource: {fileID: 139189325}
+  BGM: {fileID: 8300000, guid: 4c9c412a16af9cb4693c5092b0a783f2, type: 3}
+  EngineRev: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
+  Bump: {fileID: 8300000, guid: 87754530244c95b439f1217e74d86565, type: 3}
+  Screech: {fileID: 8300000, guid: cd725ba5fafdbae4a9c0ed5b4c5888f4, type: 3}
+  Explode: {fileID: 8300000, guid: f953cc49fdda30b4e8ab66613eb6f7a1, type: 3}
+  OilSlip: {fileID: 8300000, guid: c58a1dcec30eeab42b74165949dc1ff6, type: 3}
+  CrowdCheer: {fileID: 8300000, guid: 92b25045b423b3d45bbbc075053c8ac4, type: 3}
+  CrowdCheer2: {fileID: 8300000, guid: a37e56b5a06b60c4683a0be6dea19afa, type: 3}
+  CrowdCheer3: {fileID: 8300000, guid: 50b46d4e2835b144395305f56c03ca8d, type: 3}
+  IdleStartNoise: {fileID: 8300000, guid: 27c2b4ea3bbd4754ab82489bd6131dee, type: 3}
 --- !u!1 &1679751828
 GameObject:
   m_ObjectHideFlags: 0
@@ -8988,10 +8988,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
+  m_Resource: {fileID: 8300000, guid: 87c33e6933fe50c46899b3884cb47ede, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9823,3 +9823,10 @@ SceneRoots:
   - {fileID: 593690826}
   - {fileID: 1022474332}
   - {fileID: 1596289422}
+  - {fileID: 941918989}
+  - {fileID: 1410385162}
+  - {fileID: 506899309}
+  - {fileID: 1718841216}
+  - {fileID: 588495583}
+  - {fileID: 1709763328}
+  - {fileID: 47589189}
