@@ -1412,7 +1412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f91c3abfd063a4db3185fa5149387e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1: {fileID: 172303353}
+  HighscoreCar: {fileID: 172303353}
   offset: {x: 0, y: 0, z: -10}
   smoothTime: 0.25
   target: {fileID: 172303355}

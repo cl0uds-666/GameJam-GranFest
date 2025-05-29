@@ -36,7 +36,7 @@ public class CarControllerRB : MonoBehaviour
     //on trigger call camera turn from camera movement script
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        MainCamera.GetComponent<CameraMovement>().CameraTurn(90);
+        MainCamera.GetComponent<CameraMovement>().CameraTurn(90, gameObject);
     }
 
     public void TurnLeft()

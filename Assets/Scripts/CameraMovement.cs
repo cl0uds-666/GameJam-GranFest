@@ -4,7 +4,7 @@ public class CameraMovement : MonoBehaviour
 {
     private Vector3 velocity = Vector3.zero;
 
-    [SerializeField]public GameObject Player1;
+    [SerializeField]public GameObject HighscoreCar;
     [SerializeField]public Vector3 offset = new Vector3(0f, 0f, -10f);
     [SerializeField]public float smoothTime = 0.25f;
     [SerializeField]private Transform target;
@@ -18,19 +18,7 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CameraFollow(Player1);
-    }
-
-    //when colliding with a trigger it rotates, might use rotate around to rotate around the trigger's centre
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        CameraTurn(90);
-        Debug.Log("COLLIDING");
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        CameraTurn(90);
-        Debug.Log("COLLIDING");
+        CameraFollow(HighscoreCar);
     }
 
     public void CameraFollow(GameObject player)
@@ -43,9 +31,18 @@ public class CameraMovement : MonoBehaviour
     }
 
     //should just rotate the camera when it hits the trigger by how many degrees you enter for now
-    public void CameraTurn(float TurnDegrees)
+    public void CameraTurn(float TurnDegrees, GameObject Car)
     {
-        gameObject.transform.Rotate(new Vector3(0, 0 , TurnDegrees));
+        if (Car == HighscoreCar)
+        {
+            Quaternion currentRotation;
+            //i don't get quaternions at all :(
+            //Quaternion targetLocation = (0, 0, TurnDegrees); 
+			
+			
+            //gameObject.transform.Rotate(new Vector3(0, 0, TurnDegrees));
+
+        }
     }
 
     public void ScreenShake()
