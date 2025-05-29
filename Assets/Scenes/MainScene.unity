@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e731827de3e270944b456cfb74f2d69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 10
+  forwardSpeed: 5
   turnSpeed: 200
   MainCamera: {fileID: 0}
 --- !u!50 &172303357
@@ -1415,7 +1415,9 @@ MonoBehaviour:
   HighscoreCar: {fileID: 172303353}
   offset: {x: 0, y: 0, z: -10}
   smoothTime: 0.25
+  rotateTime: 5
   target: {fileID: 172303355}
+  IsRotate: 0
 --- !u!1 &519516571
 GameObject:
   m_ObjectHideFlags: 0

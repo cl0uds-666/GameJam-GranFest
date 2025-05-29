@@ -14,6 +14,8 @@ public class CarControllerRB : MonoBehaviour
     private Rigidbody2D rb;
     private bool isCollidingWithTrigger;
 
+    private float rotationDegrees;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,7 +45,8 @@ public class CarControllerRB : MonoBehaviour
     //on trigger call camera turn from camera movement script
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        MainCamera.GetComponent<CameraMovement>().CameraTurn(90, gameObject);
+        MainCamera.GetComponent<CameraMovement>().CameraTurn(rotationDegrees, gameObject);
+        isCollidingWithTrigger = true;
     }
 
     public void TurnLeft()
