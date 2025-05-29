@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     public int[] playerScores;
     public List<GameObject> PlayerScoreText = new List<GameObject>();
     public int highscore;
+    public int currentHighscorePlayer = 0; // track which player is currently leading
 
     private void Start()
     {
@@ -50,14 +51,13 @@ public class ScoreManager : MonoBehaviour
                 }
             }
 
-            //execute code here
-
             //goes through all scores in array, if it's bigger than the high score then it sets it replaces it
-            foreach (int score in playerScores)
+            for (int i = 0; i < playerScores.Length; i++)
             {
-                if (score > highscore)
+                if (playerScores[i] > highscore)
                 {
-                    highscore = score;
+                    highscore = playerScores[i];
+                    currentHighscorePlayer = i; // update current highscore player
                 }
             }
 
@@ -75,5 +75,11 @@ public class ScoreManager : MonoBehaviour
         {
             playerScores[PlayerNum] = 0;
         }
+    }
+
+    // returns the player GameObject currently leading the score
+    public GameObject GetHighscorePlayer()
+    {
+        return GameObject.Find("Player_" + currentHighscorePlayer);
     }
 }
