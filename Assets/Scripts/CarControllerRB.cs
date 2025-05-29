@@ -8,21 +8,33 @@ public class CarControllerRB : MonoBehaviour
     [SerializeField] public float turnSpeed = 200f;
 
     private float turnDirection = 0f;
+    private float speedRestoreTimer = 0f;
+    private float originalSpeed;
     private Rigidbody2D rb;
 
     [Header("Spin")]
     [SerializeField] private float spinTimer = 0f;
     [SerializeField] private float spinDuration = 0.5f;
     [SerializeField] private bool isSpinning = false;
-    private Vector2 spinDirection; //New: direction locked during spin
+    private Vector2 spinDirection; // New: direction locked during spin
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        originalSpeed = forwardSpeed; // store initial speed for resets
     }
 
     void FixedUpdate()
     {
+        if (speedRestoreTimer > 0f)
+        {
+            speedRestoreTimer -= Time.fixedDeltaTime;
+            if (speedRestoreTimer <= 0f)
+            {
+                forwardSpeed = originalSpeed; // restore speed
+            }
+        }
+
         if (isSpinning)
         {
             spinTimer -= Time.fixedDeltaTime;
@@ -41,6 +53,12 @@ public class CarControllerRB : MonoBehaviour
         rb.velocity = transform.up * forwardSpeed;
         float rotationAmount = -turnDirection * turnSpeed * Time.fixedDeltaTime;
         rb.MoveRotation(rb.rotation + rotationAmount);
+    }
+
+    public void ApplyTemporarySlow(float newSpeed, float duration)
+    {
+        forwardSpeed = newSpeed;
+        speedRestoreTimer = duration;
     }
 
     public void ApplySpin(float torque)
