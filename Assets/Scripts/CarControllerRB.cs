@@ -38,7 +38,7 @@ public class CarControllerRB : MonoBehaviour
         if (isCollidingWithTrigger)
         {
             MainCamera.GetComponent<CameraMovement>().CameraTurn(90, gameObject);
-            isCollidingWithTrigger = true;
+            isCollidingWithTrigger = false;
         }
     }
 

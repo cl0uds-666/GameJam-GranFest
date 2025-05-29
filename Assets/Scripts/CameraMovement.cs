@@ -15,10 +15,16 @@ public class CameraMovement : MonoBehaviour
     private Quaternion targetLocation;
     private bool TargetRotationSet = false;
 
+    private float shakeDuration = 0f;
+    private float shakeMagnitude = 0.7f;
+    private float dampingSpeed = 1f;
+    Vector3 InitialPos;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        InitialPos = gameObject.transform.position;
+        ScreenShake(0.5f);
     }
 
     // Update is called once per frame
@@ -38,6 +44,17 @@ public class CameraMovement : MonoBehaviour
                 IsRotate = false;
                 TargetRotationSet = false;
             }
+        }
+
+        if(shakeDuration > 0)
+        {
+            gameObject.transform.localPosition += InitialPos + Random.insideUnitSphere * shakeMagnitude;
+            shakeDuration -= Time.deltaTime * dampingSpeed;
+        }
+        else
+        {
+            shakeDuration = 0f;
+            //gameObject.transform.localPosition = InitialPos;
         }
         //gameObject.transform.Rotate(new Vector3(0, 0, TurnDegrees));
     }
@@ -75,8 +92,8 @@ public class CameraMovement : MonoBehaviour
         }
     }
 
-    public void ScreenShake()
+    public void ScreenShake(float duration)
     {
-
+        shakeDuration = duration;
     }
 }
