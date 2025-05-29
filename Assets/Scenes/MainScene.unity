@@ -1012,7 +1012,7 @@ GameObject:
   - component: {fileID: 198398429}
   m_Layer: 0
   m_Name: Racing_Cars_Asset 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2804,7 +2804,7 @@ GameObject:
   - component: {fileID: 593690822}
   m_Layer: 0
   m_Name: Racing_Cars_Asset 4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3175,8 +3175,51 @@ MonoBehaviour:
   - {fileID: 8187682630063800382, guid: 7d787c529cef53f4cbf164cf01004395, type: 3}
   - {fileID: 8187682630063800382, guid: c26a05be60a981444b0ccf7cf0fcd8c7, type: 3}
   - {fileID: 5863861054339413568, guid: f35e941ee86daf24ea064925cd6afc84, type: 3}
-  spawnPoints: []
-  initialSpawnCount: 30
+  - {fileID: 5863861054339413568, guid: f35e941ee86daf24ea064925cd6afc84, type: 3}
+  - {fileID: 5863861054339413568, guid: f35e941ee86daf24ea064925cd6afc84, type: 3}
+  spawnPoints:
+  - {fileID: 1741425866}
+  - {fileID: 1530650013}
+  - {fileID: 260408239}
+  - {fileID: 1609612400}
+  - {fileID: 989805071}
+  - {fileID: 1245308357}
+  - {fileID: 586690820}
+  - {fileID: 1377722060}
+  - {fileID: 1492457598}
+  - {fileID: 1604772338}
+  - {fileID: 495821673}
+  - {fileID: 570756229}
+  - {fileID: 367154911}
+  - {fileID: 187246593}
+  - {fileID: 190221345}
+  - {fileID: 211253487}
+  - {fileID: 935666194}
+  - {fileID: 1521179281}
+  - {fileID: 1839025008}
+  - {fileID: 1044423987}
+  - {fileID: 1602637989}
+  - {fileID: 1269794242}
+  - {fileID: 2025158515}
+  - {fileID: 346988864}
+  - {fileID: 662075746}
+  - {fileID: 1162796274}
+  - {fileID: 262962044}
+  - {fileID: 194449288}
+  - {fileID: 1717606239}
+  - {fileID: 840894194}
+  - {fileID: 1869445717}
+  - {fileID: 1068123660}
+  - {fileID: 961395921}
+  - {fileID: 39583367}
+  - {fileID: 1223892103}
+  - {fileID: 360873087}
+  - {fileID: 676495347}
+  - {fileID: 527085848}
+  - {fileID: 517500567}
+  - {fileID: 762446830}
+  - {fileID: 2073662155}
+  initialSpawnCount: 35
   spawnOverTime: 0
   spawnInterval: 2
 --- !u!1 &676495346
@@ -6173,7 +6216,7 @@ GameObject:
   - component: {fileID: 1679751829}
   m_Layer: 0
   m_Name: Racing_Cars_Asset 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8026,7 +8069,7 @@ GameObject:
   - component: {fileID: 2105838299}
   m_Layer: 0
   m_Name: Racing_Cars_Asset 3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
