@@ -17,6 +17,7 @@ public class TyreStack : MonoBehaviour
         {
             float slowedSpeed = Mathf.Max(0.1f, controller.forwardSpeed * slowMultiplier); // avoid 0 or negative speed
             controller.ApplyTemporarySlow(slowedSpeed, slowDuration);
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().Bump);
         }
 
         // Spawn tyres in radial directions

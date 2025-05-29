@@ -12,6 +12,8 @@ public class OilSpill : MonoBehaviour
         Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
         if (rb)
         {
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().OilSlip);
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().Screech);
             float torque = Random.Range(-spinForce, spinForce);
             CarControllerRB controller = rb.GetComponent<CarControllerRB>();
             if (controller != null)

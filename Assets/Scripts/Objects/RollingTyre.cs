@@ -30,6 +30,7 @@ public class RollingTyre : MonoBehaviour
             if (dot > 0.5f)
             {
                 // Tyre hits front of car TEMPORARY slowdown
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().Bump);
                 controller.ApplyTemporarySlow(0.5f, 1f);
             }
             else
@@ -38,6 +39,8 @@ public class RollingTyre : MonoBehaviour
                 Rigidbody2D playerRb = other.GetComponent<Rigidbody2D>();
                 if (playerRb)
                 {
+                    GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().Bump);
+                    GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().Screech);
                     playerRb.AddForce(rb.velocity.normalized * 5f, ForceMode2D.Impulse);
                 }
             }
