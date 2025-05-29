@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+
     // Start is called before the first frame update
     [Header("AudioSources")]
     public AudioSource musicSource;
@@ -27,12 +30,9 @@ public class AudioManager : MonoBehaviour
 
     public void Update()
     {
-        CarSource1.pitch = GetComponent<CarControllerRB>().forwardSpeed;
-        CarSource2.pitch = GetComponent<CarControllerRB>().forwardSpeed;
-        CarSource3.pitch = GetComponent<CarControllerRB>().forwardSpeed;
-        CarSource4.pitch = GetComponent<CarControllerRB>().forwardSpeed;
+        CarSource1.pitch = GameObject.Find("Racing_Cars_Asset 1").GetComponent<CarControllerRB>().forwardSpeed / 5;
+        CarSource2.pitch = GameObject.Find("Racing_Cars_Asset 2").GetComponent<CarControllerRB>().forwardSpeed / 5;
+        CarSource3.pitch = GameObject.Find("Racing_Cars_Asset 3").GetComponent<CarControllerRB>().forwardSpeed / 5;
+        CarSource4.pitch = GameObject.Find("Racing_Cars_Asset 4").GetComponent<CarControllerRB>().forwardSpeed / 5;
     }
 }
-
-
-

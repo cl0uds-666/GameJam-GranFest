@@ -12,7 +12,14 @@ public class OilSpill : MonoBehaviour
         Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
         if (rb)
         {
+            AudioManager audio = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+            audio.SFXSource.PlayOneShot(audio.OilSlip);
+            audio.SFXSource.PlayOneShot(audio.Screech);
+
             float torque = Random.Range(-spinForce, spinForce);
+            Debug.Log($"Oil spill hit! Spinning player with torque: {torque}");
+
+            // Try applying spin via CarControllerRB
             CarControllerRB controller = rb.GetComponent<CarControllerRB>();
             if (controller != null)
             {
@@ -20,11 +27,18 @@ public class OilSpill : MonoBehaviour
             }
             else
             {
-                rb.AddTorque(torque, ForceMode2D.Impulse); // fallback
+                // If not present, try IdleAutoplay instead
+                IdleAutoplay idleAutoplay = rb.GetComponent<IdleAutoplay>();
+                if (idleAutoplay != null)
+                {
+                    rb.AddTorque(torque, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    rb.AddTorque(torque, ForceMode2D.Impulse); // fallback
+                }
             }
-            Debug.Log($"Oil spill hit! Spinning player with torque: {torque}");
         }
-
 
         if (destroyOnUse)
         {
