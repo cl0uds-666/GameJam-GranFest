@@ -24,6 +24,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip CrowdCheer2;
     public AudioClip CrowdCheer3;
     public AudioClip IdleStartNoise;
+
+    public void Update()
+    {
+        CarSource1.pitch = GetComponent<CarControllerRB>().forwardSpeed;
+        CarSource2.pitch = GetComponent<CarControllerRB>().forwardSpeed;
+        CarSource3.pitch = GetComponent<CarControllerRB>().forwardSpeed;
+        CarSource4.pitch = GetComponent<CarControllerRB>().forwardSpeed;
+    }
 }
 
 
