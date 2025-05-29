@@ -90,12 +90,17 @@ public class IdleScreenManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         greenLight.SetActive(false);
 
-        // Unfreeze Rigidbody2D
+        // Unfreeze Rigidbody2D and enable visibility checks
         foreach (GameObject player in players)
         {
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
             if (rb != null)
                 rb.constraints = RigidbodyConstraints2D.None;
+
+            PlayerVisibilityCheck visibility = player.GetComponent<PlayerVisibilityCheck>();
+            if (visibility != null)
+                visibility.EnableCheck();
         }
+
     }
 }

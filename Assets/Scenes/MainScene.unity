@@ -1068,8 +1068,9 @@ GameObject:
   - component: {fileID: 198398430}
   - component: {fileID: 198398429}
   - component: {fileID: 198398434}
+  - component: {fileID: 198398435}
   m_Layer: 0
-  m_Name: Racing_Cars_Asset 2
+  m_Name: Player_1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1253,7 +1254,19 @@ MonoBehaviour:
   turnSpeed: 200
   reachDistance: 0.5
   waypoints:
-  - {fileID: 0}
+  - {fileID: 406026514}
+--- !u!114 &198398435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198398428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5eba32e4aacbe4099269b67fda9850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &211210910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,6 +2032,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368756309}
   m_CullTransparentMesh: 1
+--- !u!1 &406026513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 406026514}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &406026514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406026513}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.7, y: 16.2, z: -0.28181374}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &442035262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,7 +2468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f91c3abfd063a4db3185fa5149387e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HighscoreCar: {fileID: 1679751828}
+  HighscoreCar: {fileID: 0}
   offset: {x: 0, y: 0, z: -10}
   smoothFactor: 0.1
 --- !u!1 &519516571
@@ -2993,8 +3037,9 @@ GameObject:
   - component: {fileID: 593690823}
   - component: {fileID: 593690822}
   - component: {fileID: 593690827}
+  - component: {fileID: 593690828}
   m_Layer: 0
-  m_Name: Racing_Cars_Asset 4
+  m_Name: Player_3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3177,7 +3222,20 @@ MonoBehaviour:
   forwardSpeed: 3
   turnSpeed: 200
   reachDistance: 0.5
-  waypoints: []
+  waypoints:
+  - {fileID: 406026514}
+--- !u!114 &593690828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593690821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5eba32e4aacbe4099269b67fda9850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3952,6 +4010,7 @@ MonoBehaviour:
   - {fileID: 1688762718}
   - {fileID: 1308336858}
   highscore: 0
+  currentHighscorePlayer: 0
 --- !u!1 &792458920
 GameObject:
   m_ObjectHideFlags: 0
@@ -7037,8 +7096,9 @@ GameObject:
   - component: {fileID: 1679751830}
   - component: {fileID: 1679751829}
   - component: {fileID: 1679751834}
+  - component: {fileID: 1679751835}
   m_Layer: 0
-  m_Name: Racing_Cars_Asset 1
+  m_Name: Player_0
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7222,7 +7282,19 @@ MonoBehaviour:
   turnSpeed: 200
   reachDistance: 0.5
   waypoints:
-  - {fileID: 0}
+  - {fileID: 406026514}
+--- !u!114 &1679751835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679751828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5eba32e4aacbe4099269b67fda9850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1688762718
 GameObject:
   m_ObjectHideFlags: 0
@@ -9267,8 +9339,9 @@ GameObject:
   - component: {fileID: 2105838300}
   - component: {fileID: 2105838299}
   - component: {fileID: 2105838304}
+  - component: {fileID: 2105838305}
   m_Layer: 0
-  m_Name: Racing_Cars_Asset 3
+  m_Name: Player_2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9451,7 +9524,20 @@ MonoBehaviour:
   forwardSpeed: 3
   turnSpeed: 200
   reachDistance: 0.5
-  waypoints: []
+  waypoints:
+  - {fileID: 406026514}
+--- !u!114 &2105838305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105838298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5eba32e4aacbe4099269b67fda9850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2147468359
 GameObject:
   m_ObjectHideFlags: 0
@@ -9844,3 +9930,4 @@ SceneRoots:
   - {fileID: 506899309}
   - {fileID: 1709763328}
   - {fileID: 1718841216}
+  - {fileID: 406026514}
