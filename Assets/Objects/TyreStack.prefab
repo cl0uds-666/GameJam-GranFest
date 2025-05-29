@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1861297636301057249, guid: 952856efd50d89543b17e02e5ff32501, type: 3}
+  m_Sprite: {fileID: 6418903077238420647, guid: 836c1816cdfbb6540bff5ebe41afd906, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,9 +101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a20a041f57f6b4a9c20564f6cdee6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowMultiplier: 0.5
+  slowDuration: 1
+  numberOfTyres: 6
+  tyreSpreadForce: 3
   rollingTyrePrefab: {fileID: 2815851039183775498, guid: 16c87d8f6bd23cf429270aa3763d6ec3, type: 3}
-  tyreCount: 4
-  tyreForce: 3
 --- !u!61 &7617347923129705099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142,7 +144,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.52, y: 1.8}
+    oldSize: {x: 6.7, y: 6.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
