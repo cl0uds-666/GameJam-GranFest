@@ -4,34 +4,34 @@ public class CarController : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private float forwardSpeed = 5f;
-    [SerializeField] private float horizontalSpeed = 3f;
+    [SerializeField] private float turnSpeed = 3f;
 
-    private float horizontalInput = 0f;
+    private float turnDirection = 0f;
 
     void Update()
     {
         // Constant forward movement (uo screen)
-        //transform.Translate(Vector3.up * forwardSpeed * Time.deltaTime);
+        transform.Translate(Vector3.up * forwardSpeed * Time.deltaTime);
 
         // Apply horizontal movement
-        transform.Translate(Vector3.right * horizontalInput * horizontalSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.forward * -turnDirection * turnSpeed * Time.deltaTime);
     }
 
     // Called when Left button is pressed
     public void MoveLeft()
     {
-        horizontalInput = -1f;
+        turnDirection = -1f;
     }
 
     // Called when Right button is pressed
     public void MoveRight()
     {
-        horizontalInput = 1f;
+        turnDirection = 1f;
     }
 
     // Called when no button is pressed
     public void StopMoving()
     {
-        horizontalInput = 0f;
+        turnDirection = 0f;
     }
 }
