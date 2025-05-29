@@ -10,8 +10,19 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
+        ScoreManager sm = FindFirstObjectByType<ScoreManager>();
+        if (sm != null)
+        {
+            GameObject newHighscoreCar = sm.GetHighscorePlayer();
+            if (newHighscoreCar != null && newHighscoreCar != HighscoreCar)
+            {
+                HighscoreCar = newHighscoreCar;
+            }
+        }
+
         CameraFollow(HighscoreCar);
     }
+
 
     public void CameraFollow(GameObject player)
     {
