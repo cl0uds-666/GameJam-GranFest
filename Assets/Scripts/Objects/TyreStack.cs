@@ -17,6 +17,12 @@ public class TyreStack : MonoBehaviour
         {
             float slowedSpeed = Mathf.Max(0.1f, controller.forwardSpeed * slowMultiplier); // avoid 0 or negative speed
             controller.ApplyTemporarySlow(slowedSpeed, slowDuration);
+            ScoreManager sm = FindFirstObjectByType<ScoreManager>();
+            int index = PlayerUtils.GetPlayerIndex(other.gameObject);
+            if (sm != null && index >= 0)
+            {
+                sm.DeductScore(index, 2);
+            }
             GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().Bump);
         }
 
