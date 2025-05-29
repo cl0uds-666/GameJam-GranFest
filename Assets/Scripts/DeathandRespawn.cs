@@ -15,7 +15,7 @@ public class DeathandRespawn : MonoBehaviour
         //adding all cars to a list
         for (int i = 0; i < 4; i++)
         {
-            AliveCars.Add(GameObject.Find("Car(" + i.ToString() + ")";
+            AliveCars.Add(GameObject.Find("Car(" + i.ToString() + ")"));
         }
         screenSize = new Vector2(Screen.width, Screen.height);
     }
