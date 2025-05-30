@@ -22,55 +22,42 @@ public class ScoreManager : MonoBehaviour
             HighscoreText = GameObject.Find("T_Score")?.GetComponent<TMP_Text>();
         }
 
-        // Load highscore from PlayerPrefs
-        highscore = PlayerPrefs.GetInt("Highscore", 0);
-        if (HighscoreText != null)
-        {
-            HighscoreText.text = highscore.ToString();
-        }
-
         //finding all player text gameobjects and adding them to an array
         for (int i = 0; i < playerScores.Length; i++)
         {
-            GameObject textObj = GameObject.Find("T_Count_" + i);
-            PlayerScoreText.Add(textObj);
             //why tf are you not working, i think i'm actually stupid
             //i just want to add gameobjects to a list maaaaaaaaaaaaaaaaaaaaaaaaaan
+            GameObject textObj = GameObject.Find("T_Count_" + i);
+            PlayerScoreText.Add(textObj);
+
             Debug.Log("T_Count_" + i);
             Debug.Log(textObj);
         }
     }
 
-
-
-
     void Update()
     {
         if (Time.time > nextActionTime)
         {
-            // every second the player is alive it adds 1 to that player's score
+            //every second the player is alive it adds 1 to that player's score
             nextActionTime += WaitTime;
             for (int i = 0; i < playerScores.Length; i++)
             {
                 playerScores[i] += 1;
-                // finds the player text of this current player whose score we added to and displays the score
+                //finds the player text of this current player whose score we added to and displays the score
                 if (PlayerScoreText[i] != null)
                 {
                     PlayerScoreText[i].GetComponent<TMP_Text>().text = playerScores[i].ToString();
                 }
             }
 
-            // goes through all scores in array, if it's bigger than the high score then it replaces it
+            //goes through all scores in array, if it's bigger than the high score then it sets it replaces it
             for (int i = 0; i < playerScores.Length; i++)
             {
                 if (playerScores[i] > highscore)
                 {
                     highscore = playerScores[i];
                     currentHighscorePlayer = i; // update current highscore player
-
-                    // Save new highscore to PlayerPrefs
-                    PlayerPrefs.SetInt("Highscore", highscore);
-                    PlayerPrefs.Save();
                 }
             }
 
@@ -80,7 +67,6 @@ public class ScoreManager : MonoBehaviour
             }
         }
     }
-
 
     //resets scoreee
     public void PlayerReset(int PlayerNum)
