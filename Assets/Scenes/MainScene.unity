@@ -5931,6 +5931,8 @@ MonoBehaviour:
   redLight: {fileID: 1851718947}
   yellowLight: {fileID: 627963663}
   greenLight: {fileID: 1210859380}
+  cameraMovement: {fileID: 519420033}
+  idleSwitchInterval: 3
 --- !u!4 &1022474332
 Transform:
   m_ObjectHideFlags: 0
@@ -6734,6 +6736,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308336858}
   m_CullTransparentMesh: 1
+--- !u!1 &1332214202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1332214203}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1332214203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332214202}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -48.5, y: 34.2, z: -0.28181374}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377722059
 GameObject:
   m_ObjectHideFlags: 0
@@ -8221,6 +8254,7 @@ MonoBehaviour:
   reachDistance: 0.5
   waypoints:
   - {fileID: 406026514}
+  - {fileID: 1332214203}
 --- !u!114 &1679751835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11241,6 +11275,7 @@ SceneRoots:
   - {fileID: 1709763328}
   - {fileID: 1718841216}
   - {fileID: 406026514}
+  - {fileID: 1332214203}
   - {fileID: 19731353}
   - {fileID: 816814337}
   - {fileID: 117160306}

@@ -17,6 +17,14 @@ public class IdleScreenManager : MonoBehaviour
     public GameObject yellowLight;
     public GameObject greenLight;
 
+    [Header("Camera")]
+    public CameraMovement cameraMovement;
+    public float idleSwitchInterval = 3f;
+
+    private int currentCameraIndex = 0;
+    private float nextCameraSwitchTime = 0f;
+
+
     private bool gameStarted = false;
 
     void Start()
@@ -43,11 +51,31 @@ public class IdleScreenManager : MonoBehaviour
 
     void Update()
     {
-        if (!gameStarted && Input.GetMouseButtonDown(0))
+        if (!gameStarted)
         {
-            StartCoroutine(BeginGameSequence());
+            HandleIdleCameraSwitch();
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                StartCoroutine(BeginGameSequence());
+            }
         }
     }
+
+    private void HandleIdleCameraSwitch()
+    {
+        if (Time.time >= nextCameraSwitchTime && players.Length > 0)
+        {
+            currentCameraIndex = (currentCameraIndex + 1) % players.Length;
+            if (cameraMovement != null)
+            {
+                cameraMovement.HighscoreCar = players[currentCameraIndex];
+            }
+
+            nextCameraSwitchTime = Time.time + idleSwitchInterval;
+        }
+    }
+
 
     private IEnumerator BeginGameSequence()
     {
