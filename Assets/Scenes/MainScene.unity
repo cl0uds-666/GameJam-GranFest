@@ -1310,6 +1310,9 @@ MonoBehaviour:
     m_Bits: 8
   grassSlowMultiplier: 0.6
   overlapRadius: 0.3
+  straightSprite: {fileID: 4566703502053599186, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
+  leftSprite: {fileID: -5763322429936848757, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
+  rightSprite: {fileID: 5452459301827685955, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
 --- !u!50 &198398431
 Rigidbody2D:
   serializedVersion: 4
@@ -1668,6 +1671,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 671258932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!1 &264025348
 GameObject:
   m_ObjectHideFlags: 0
@@ -3647,6 +3651,9 @@ MonoBehaviour:
     m_Bits: 8
   grassSlowMultiplier: 0.6
   overlapRadius: 0.3
+  straightSprite: {fileID: -5881977174939847579, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
+  leftSprite: {fileID: -1392223520819552433, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
+  rightSprite: {fileID: 3710354115940386449, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
 --- !u!50 &593690824
 Rigidbody2D:
   serializedVersion: 4
@@ -8479,6 +8486,9 @@ MonoBehaviour:
     m_Bits: 8
   grassSlowMultiplier: 0.6
   overlapRadius: 0.3
+  straightSprite: {fileID: -2912514107373583588, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
+  leftSprite: {fileID: 2337867374667226133, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
+  rightSprite: {fileID: -1995907343522731812, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
 --- !u!50 &1679751831
 Rigidbody2D:
   serializedVersion: 4
@@ -8575,8 +8585,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1468303632}
-  - {fileID: 264025349}
-  - {fileID: 265442925}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 55.08}
 --- !u!114 &1679751834
@@ -10952,6 +10960,9 @@ MonoBehaviour:
     m_Bits: 8
   grassSlowMultiplier: 0.6
   overlapRadius: 0.3
+  straightSprite: {fileID: 3262309964736374429, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
+  leftSprite: {fileID: -2572510300428172562, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
+  rightSprite: {fileID: -1919170150605199181, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
 --- !u!50 &2105838301
 Rigidbody2D:
   serializedVersion: 4

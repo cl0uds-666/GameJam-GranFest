@@ -22,13 +22,29 @@ public class CarControllerRB : MonoBehaviour
     [Header("Grass Slowdown")]
     [SerializeField] private LayerMask grassLayer; 
     [SerializeField] private float grassSlowMultiplier = 0.6f; 
-    [SerializeField] private float overlapRadius = 0.3f; 
+    [SerializeField] private float overlapRadius = 0.3f;
+
+    [Header("Turning Sprites")]
+    [SerializeField] private Sprite straightSprite;
+    [SerializeField] private Sprite leftSprite;
+    [SerializeField] private Sprite rightSprite;
+
+    private SpriteRenderer spriteRenderer;
+
+
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         originalSpeed = forwardSpeed;
+
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("No SpriteRenderer found on child of " + name);
+        }
     }
+
 
     void FixedUpdate()
     {
@@ -81,6 +97,16 @@ public class CarControllerRB : MonoBehaviour
         }
     }
 
+    private void UpdateSprite(Sprite sprite)
+    {
+        if (spriteRenderer != null && sprite != null)
+        {
+            spriteRenderer.sprite = sprite;
+        }
+    }
+
+
+
     public void ApplyTemporarySlow(float newSpeed, float duration)
     {
         forwardSpeed = newSpeed;
@@ -99,16 +125,21 @@ public class CarControllerRB : MonoBehaviour
     {
         Debug.Log("TurningLeft");
         turnDirection = -1f;
+        UpdateSprite(leftSprite);
     }
 
     public void TurnRight()
     {
         Debug.Log("TurningRight");
         turnDirection = 1f;
+        UpdateSprite(rightSprite);
     }
 
     public void StopTurning()
     {
         turnDirection = 0f;
+        UpdateSprite(straightSprite);
     }
+
+
 }
