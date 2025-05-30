@@ -43,7 +43,16 @@ public class IdleScreenManager : MonoBehaviour
 
     void Update()
     {
+<<<<<<< Updated upstream
         if (!gameStarted && Input.GetMouseButtonDown(0))
+=======
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        if (!gameStarted)
+>>>>>>> Stashed changes
         {
             StartCoroutine(BeginGameSequence());
         }
@@ -83,10 +92,22 @@ public class IdleScreenManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         redLight.SetActive(false);
 
+<<<<<<< Updated upstream
         yellowLight.SetActive(true);
         GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().IdleStartNoise);
         yield return new WaitForSeconds(1f);
         yellowLight.SetActive(false);
+=======
+        redLight2.SetActive(true);
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().IdleStartNoise);
+        yield return new WaitForSeconds(1f);
+        redLight2.SetActive(false);
+
+        redLight3.SetActive(true);
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().IdleStartNoise);
+        yield return new WaitForSeconds(1f);
+        redLight3.SetActive(false);
+>>>>>>> Stashed changes
 
         greenLight.SetActive(true);
         GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().IdleStartNoise);
