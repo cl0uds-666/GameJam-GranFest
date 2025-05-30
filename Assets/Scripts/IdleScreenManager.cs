@@ -16,7 +16,8 @@ public class IdleScreenManager : MonoBehaviour
 
     [Header("Traffic Lights")]
     public GameObject redLight;
-    public GameObject yellowLight;
+    public GameObject redLight2;
+    public GameObject redLight3;
     public GameObject greenLight;
 
     [Header("Camera")]
@@ -35,7 +36,8 @@ public class IdleScreenManager : MonoBehaviour
         mainUICanvas.SetActive(false);
 
         redLight.SetActive(false);
-        yellowLight.SetActive(false);
+        redLight2.SetActive(false);
+        redLight3.SetActive(false);
         greenLight.SetActive(false);
 
         // Enable IdleAutoplay, disable CarControllerRB
@@ -117,9 +119,13 @@ public class IdleScreenManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         redLight.SetActive(false);
 
-        yellowLight.SetActive(true);
+        redLight2.SetActive(true);
         yield return new WaitForSeconds(1f);
-        yellowLight.SetActive(false);
+        redLight2.SetActive(false);
+
+        redLight3.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        redLight3.SetActive(false);
 
         greenLight.SetActive(true);
         yield return new WaitForSeconds(1f);
