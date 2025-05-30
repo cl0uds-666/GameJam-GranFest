@@ -8,20 +8,21 @@ public class CarControllerRB : MonoBehaviour
     [SerializeField] public float forwardSpeed = 5f;
     [SerializeField] public float turnSpeed = 200f;
 
-    [Header("Camera :3")]
-    [SerializeField] public GameObject MainCamera;
-
     private float turnDirection = 0f;
     private float speedRestoreTimer = 0f;
     private float originalSpeed;
     private Rigidbody2D rb;
-    private bool isCollidingWithTrigger;
 
     [Header("Spin")]
     [SerializeField] private float spinTimer = 0f;
     [SerializeField] private float spinDuration = 0.5f;
     [SerializeField] private bool isSpinning = false;
-    private Vector2 spinDirection; // New: direction locked during spin
+    private Vector2 spinDirection;
+
+    [Header("Grass Slowdown")]
+    [SerializeField] private LayerMask grassLayer; 
+    [SerializeField] private float grassSlowMultiplier = 0.6f; 
+    [SerializeField] private float overlapRadius = 0.3f;
 
     [Header("Turning Sprites")]
     [SerializeField] private Sprite straightSprite;
@@ -29,6 +30,7 @@ public class CarControllerRB : MonoBehaviour
     [SerializeField] private Sprite rightSprite;
 
     private SpriteRenderer spriteRenderer;
+
 
 
     void Awake()
@@ -44,22 +46,25 @@ public class CarControllerRB : MonoBehaviour
     }
 
 
-    private void Start()
-    {
-        MainCamera = GameObject.Find("Main Camera");
-    }
-
     void FixedUpdate()
     {
         if (!canControl) return;
 
+        float currentSpeed = forwardSpeed;
+
+        // Check if overlapping grass
+        bool onGrass = Physics2D.OverlapCircle(transform.position, overlapRadius, grassLayer);
+        if (onGrass)
+        {
+            currentSpeed *= grassSlowMultiplier;
+        }
 
         if (speedRestoreTimer > 0f)
         {
             speedRestoreTimer -= Time.fixedDeltaTime;
             if (speedRestoreTimer <= 0f)
             {
-                forwardSpeed = originalSpeed; // restore speed
+                forwardSpeed = originalSpeed;
             }
         }
 
@@ -69,37 +74,16 @@ public class CarControllerRB : MonoBehaviour
             if (spinTimer <= 0f)
             {
                 isSpinning = false;
-                rb.angularVelocity = 0f; // stop the spin
+                rb.angularVelocity = 0f;
             }
 
-            // Maintain original direction while spinning
-            rb.velocity = spinDirection * forwardSpeed;
-            return; // skip normal movement/steering
+            rb.velocity = spinDirection * currentSpeed;
+            return;
         }
 
-        // Normal movement
-        rb.velocity = transform.up * forwardSpeed;
+        rb.velocity = transform.up * currentSpeed;
         float rotationAmount = -turnDirection * turnSpeed * Time.fixedDeltaTime;
         rb.MoveRotation(rb.rotation + rotationAmount);
-
-        if (isCollidingWithTrigger)
-        {
-            MainCamera.GetComponent<CameraMovement>().CameraTurn(90, gameObject);
-            isCollidingWithTrigger = false;
-        }
-    }
-
-    //on trigger call camera turn from camera movement script
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //if it's a camera turn object
-        if (collision.CompareTag("CameraTurn"))
-        {
-            //finds the degrees to turn from the gameobject of this collider, then puts that into the camera turn function
-            MainCamera.GetComponent<CameraMovement>().CameraTurn(collision.gameObject.GetComponent<TurnInformation>().TurnDegrees, gameObject);
-            isCollidingWithTrigger = true;
-        }
-        //getting the degrees the camera has to turn from the information script
     }
 
     public void SetControlEnabled(bool enabled)
@@ -124,8 +108,6 @@ public class CarControllerRB : MonoBehaviour
         rb.AddTorque(torque, ForceMode2D.Impulse);
         isSpinning = true;
         spinTimer = spinDuration;
-
-        // Lock in current movement direction
         spinDirection = rb.velocity.normalized;
     }
 
@@ -136,6 +118,7 @@ public class CarControllerRB : MonoBehaviour
             spriteRenderer.sprite = sprite;
         }
     }
+
 
 
     public void TurnLeft()
@@ -157,5 +140,6 @@ public class CarControllerRB : MonoBehaviour
         turnDirection = 0f;
         UpdateSprite(straightSprite);
     }
+
 
 }

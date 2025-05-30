@@ -1489,10 +1489,14 @@ MonoBehaviour:
   canControl: 1
   forwardSpeed: 5
   turnSpeed: 200
-  MainCamera: {fileID: 0}
   spinTimer: 0
   spinDuration: 2
   isSpinning: 0
+  grassLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  grassSlowMultiplier: 0.6
+  overlapRadius: 0.3
   straightSprite: {fileID: 4566703502053599186, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
   leftSprite: {fileID: -5763322429936848757, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
   rightSprite: {fileID: 5452459301827685955, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
@@ -2917,10 +2921,14 @@ MonoBehaviour:
   canControl: 1
   forwardSpeed: 5
   turnSpeed: 200
-  MainCamera: {fileID: 0}
   spinTimer: 0
   spinDuration: 2
   isSpinning: 0
+  grassLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  grassSlowMultiplier: 0.6
+  overlapRadius: 0.3
   straightSprite: {fileID: -5881977174939847579, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
   leftSprite: {fileID: -1392223520819552433, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
   rightSprite: {fileID: 3710354115940386449, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
@@ -6583,10 +6591,14 @@ MonoBehaviour:
   canControl: 1
   forwardSpeed: 5
   turnSpeed: 200
-  MainCamera: {fileID: 0}
   spinTimer: 0
   spinDuration: 2
   isSpinning: 0
+  grassLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  grassSlowMultiplier: 0.6
+  overlapRadius: 0.3
   straightSprite: {fileID: -2912514107373583588, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
   leftSprite: {fileID: 2337867374667226133, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
   rightSprite: {fileID: -1995907343522731812, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
@@ -7443,6 +7455,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778443651}
   m_CullTransparentMesh: 1
+--- !u!1001 &1811455721
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1669677698589018634, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
+      propertyPath: m_Name
+      value: GrassCollision
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669677698589018634, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663805826276682093, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 79.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663805826276682093, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 130.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663805826276682093, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.603883
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663805826276682093, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663805826276682093, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663805826276682093, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663805826276682093, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663805826276682093, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663805826276682093, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663805826276682093, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 003c3522dc7559349a7eb151fd6613e9, type: 3}
 --- !u!1 &1839025007
 GameObject:
   m_ObjectHideFlags: 0
@@ -8886,10 +8959,14 @@ MonoBehaviour:
   canControl: 1
   forwardSpeed: 5
   turnSpeed: 200
-  MainCamera: {fileID: 0}
   spinTimer: 0
   spinDuration: 2
   isSpinning: 0
+  grassLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  grassSlowMultiplier: 0.6
+  overlapRadius: 0.3
   straightSprite: {fileID: 3262309964736374429, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
   leftSprite: {fileID: -2572510300428172562, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
   rightSprite: {fileID: -1919170150605199181, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
@@ -9347,3 +9424,4 @@ SceneRoots:
   - {fileID: 136689376}
   - {fileID: 844943767}
   - {fileID: 1898370852}
+  - {fileID: 1811455721}
