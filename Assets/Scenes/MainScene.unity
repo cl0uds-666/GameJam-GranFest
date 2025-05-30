@@ -2100,6 +2100,9 @@ MonoBehaviour:
   straightSprite: {fileID: 4566703502053599186, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
   leftSprite: {fileID: -5763322429936848757, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
   rightSprite: {fileID: 5452459301827685955, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
+  MainCamera: {fileID: 0}
+  isCollidingWithTrigger: 0
+  AudioManager: {fileID: 0}
 --- !u!50 &198398431
 Rigidbody2D:
   serializedVersion: 4
@@ -4682,6 +4685,9 @@ MonoBehaviour:
   straightSprite: {fileID: -5881977174939847579, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
   leftSprite: {fileID: -1392223520819552433, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
   rightSprite: {fileID: 3710354115940386449, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
+  MainCamera: {fileID: 0}
+  isCollidingWithTrigger: 0
+  AudioManager: {fileID: 0}
 --- !u!50 &593690824
 Rigidbody2D:
   serializedVersion: 4
@@ -8025,9 +8031,10 @@ MonoBehaviour:
   - {fileID: 1599912923}
   tapToPlayCanvas: {fileID: 1596289417}
   mainUICanvas: {fileID: 764743478}
-  redLight: {fileID: 1851718947}
-  yellowLight: {fileID: 627963663}
-  greenLight: {fileID: 1210859380}
+  redLight: {fileID: 1538041529}
+  redLight2: {fileID: 341659242}
+  redLight3: {fileID: 464144397}
+  greenLight: {fileID: 1069840574}
   cameraMovement: {fileID: 519420033}
   idleSwitchInterval: 3
 --- !u!4 &1022474332
@@ -11248,6 +11255,9 @@ MonoBehaviour:
   straightSprite: {fileID: -2912514107373583588, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
   leftSprite: {fileID: 2337867374667226133, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
   rightSprite: {fileID: -1995907343522731812, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
+  MainCamera: {fileID: 0}
+  isCollidingWithTrigger: 0
+  AudioManager: {fileID: 0}
 --- !u!50 &1679751831
 Rigidbody2D:
   serializedVersion: 4
@@ -14612,6 +14622,9 @@ MonoBehaviour:
   straightSprite: {fileID: 3262309964736374429, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
   leftSprite: {fileID: -2572510300428172562, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
   rightSprite: {fileID: -1919170150605199181, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
+  MainCamera: {fileID: 0}
+  isCollidingWithTrigger: 0
+  AudioManager: {fileID: 0}
 --- !u!50 &2105838301
 Rigidbody2D:
   serializedVersion: 4
