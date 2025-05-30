@@ -208,7 +208,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rolling_Tires_Anim_Page_0: -6307036934029705316
+      Rolling_Tires_Anim_Page_1: -7571905728226531279
+      Rolling_Tires_Anim_Page_2: -5811463870596182790
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

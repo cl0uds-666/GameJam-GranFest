@@ -26,7 +26,7 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         InitialPos = gameObject.transform.position;
-        ScreenShake(0.5f);
+        //ScreenShake(0.5f);
     }
 
     // Update is called once per frame

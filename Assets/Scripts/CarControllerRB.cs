@@ -17,8 +17,6 @@ public class CarControllerRB : MonoBehaviour
     private Rigidbody2D rb;
     private bool isCollidingWithTrigger;
 
-    private float rotationDegrees;
-
     [Header("Spin")]
     [SerializeField] private float spinTimer = 0f;
     [SerializeField] private float spinDuration = 0.5f;
@@ -79,8 +77,14 @@ public class CarControllerRB : MonoBehaviour
     //on trigger call camera turn from camera movement script
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        MainCamera.GetComponent<CameraMovement>().CameraTurn(rotationDegrees, gameObject);
-        isCollidingWithTrigger = true;
+        //if it's a camera turn object
+        if (collision.CompareTag("CameraTurn"))
+        {
+            //finds the degrees to turn from the gameobject of this collider, then puts that into the camera turn function
+            MainCamera.GetComponent<CameraMovement>().CameraTurn(collision.gameObject.GetComponent<TurnInformation>().TurnDegrees, gameObject);
+            isCollidingWithTrigger = true;
+        }
+        //getting the degrees the camera has to turn from the information script
     }
 
     public void SetControlEnabled(bool enabled)
