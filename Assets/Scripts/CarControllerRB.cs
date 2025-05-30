@@ -36,6 +36,14 @@ public class CarControllerRB : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    [Header("Grass")]
+
+    [SerializeField] private int playerIndex = 0;
+    private float grassScoreTimer = 0f;
+    private ScoreManager scoreManager;
+
+
+
     private void Start()
     {
         AudioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
@@ -46,6 +54,8 @@ public class CarControllerRB : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         originalSpeed = forwardSpeed;
+        scoreManager = FindFirstObjectByType<ScoreManager>();
+
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         if (spriteRenderer == null)
@@ -66,16 +76,23 @@ public class CarControllerRB : MonoBehaviour
         if (onGrass)
         {
             currentSpeed *= grassSlowMultiplier;
-        }
 
-        if (speedRestoreTimer > 0f)
-        {
-            speedRestoreTimer -= Time.fixedDeltaTime;
-            if (speedRestoreTimer <= 0f)
+            // Tick down score
+            grassScoreTimer += Time.fixedDeltaTime;
+            if (grassScoreTimer >= 0.5f) // Deduct 1 point every 0.5s = 2 points per sec
             {
-                forwardSpeed = originalSpeed;
+                if (scoreManager != null)
+                {
+                    scoreManager.DeductScore(playerIndex, 1);
+                }
+                grassScoreTimer = 0f;
             }
         }
+        else
+        {
+            grassScoreTimer = 0f;
+        }
+
 
         if (isSpinning)
         {
