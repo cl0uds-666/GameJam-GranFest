@@ -17,14 +17,22 @@ public class TouchScreenCarController : MonoBehaviour
     [SerializeField] private bool showDebugZones = true; // Toggle to visually draw the touch zones
     private Vector2 screenSize; // Stores current screen resolution
 
+    [Header("Idle Timeout")]
+    [SerializeField] private float idleTimeout = 15f;
+    [SerializeField] private IdleScreenManager idleScreenManager;
+    private float lastInputTime;
+
     void Awake()
     {
         EnhancedTouchSupport.Enable(); // Enables Enhanced Touch input system
         screenSize = new Vector2(Screen.width, Screen.height); // Cache screen size for conversion
+        lastInputTime = Time.time; // Set initial input time
     }
 
     void Update()
     {
+        bool hasInput = false;
+
         // For each car, check if a touch is in its zone and update turn direction
         foreach (var zone in carZones)
         {
@@ -35,35 +43,38 @@ public class TouchScreenCarController : MonoBehaviour
             {
                 Vector2 touchPos = touch.screenPosition;
 
-                // If touch is in left zone, turn left
                 if (ScreenZoneContains(zone.leftZone, touchPos))
                 {
                     zone.car.TurnLeft();
                     isTurning = true;
+                    hasInput = true;
                     break;
                 }
-                // If touch is in right zone, turn right
                 else if (ScreenZoneContains(zone.rightZone, touchPos))
                 {
                     zone.car.TurnRight();
                     isTurning = true;
+                    hasInput = true;
                     break;
                 }
             }
 
-            //for mouse detection (why is ur code so perfect bruh :O)
+            // Mouse input support
             if (Input.GetMouseButton(0))
             {
-                if (ScreenZoneContains(zone.leftZone, new Vector2(Input.mousePosition.x, Input.mousePosition.y)))
+                Vector2 mousePos = Input.mousePosition;
+                if (ScreenZoneContains(zone.leftZone, mousePos))
                 {
                     zone.car.TurnLeft();
                     isTurning = true;
+                    hasInput = true;
                     break;
                 }
-                else if (ScreenZoneContains(zone.rightZone, new Vector2(Input.mousePosition.x, Input.mousePosition.y)))
+                else if (ScreenZoneContains(zone.rightZone, mousePos))
                 {
                     zone.car.TurnRight();
                     isTurning = true;
+                    hasInput = true;
                     break;
                 }
             }
@@ -72,6 +83,20 @@ public class TouchScreenCarController : MonoBehaviour
             if (!isTurning)
             {
                 zone.car.StopTurning();
+            }
+        }
+
+        // Update last input time or check idle timeout
+        if (hasInput)
+        {
+            lastInputTime = Time.time;
+        }
+        else if (Time.time - lastInputTime >= idleTimeout)
+        {
+            Debug.Log("Idle timeout reached — returning to idle screen.");
+            if (idleScreenManager != null)
+            {
+                idleScreenManager.ReturnToIdle();
             }
         }
     }
@@ -112,10 +137,9 @@ public class TouchScreenCarController : MonoBehaviour
         );
 
         Color oldColor = GUI.color;
-        Color translucentColor = new Color(color.r, color.g, color.b, 0.25f); // Set 25% opacity
+        Color translucentColor = new Color(color.r, color.g, color.b, 0.25f);
         GUI.color = translucentColor;
-        GUI.DrawTexture(pixelZone, Texture2D.whiteTexture); // Draw overlay
-
-        GUI.color = oldColor; // Reset GUI color
+        GUI.DrawTexture(pixelZone, Texture2D.whiteTexture);
+        GUI.color = oldColor;
     }
 }

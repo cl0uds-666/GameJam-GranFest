@@ -13331,6 +13331,8 @@ MonoBehaviour:
       width: 0.125
       height: 1
   showDebugZones: 0
+  idleTimeout: 20
+  idleScreenManager: {fileID: 1022474331}
 --- !u!4 &1948123352
 Transform:
   m_ObjectHideFlags: 0
