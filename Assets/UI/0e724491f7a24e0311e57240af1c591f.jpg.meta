@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 61c94d4b62ca7a5438f2238fd3996382
+guid: 96eba7b4e8f709944aca35111afbc46d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6307036934029705316
-    second: Rolling_Tires_Anim_Page_0
-  - first:
-      213: -7571905728226531279
-    second: Rolling_Tires_Anim_Page_1
-  - first:
-      213: -5811463870596182790
-    second: Rolling_Tires_Anim_Page_2
+      213: -2039265826410635029
+    second: 0e724491f7a24e0311e57240af1c591f_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -132,67 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tyre_1
+      name: 0e724491f7a24e0311e57240af1c591f_0
       rect:
         serializedVersion: 2
-        x: 86
-        y: 999
-        width: 712
-        height: 317
+        x: 0
+        y: 0
+        width: 735
+        height: 752
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9ff3e91357e878a0800000000000000
-      internalID: -6307036934029705316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tyre_2
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 582
-        width: 713
-        height: 317
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 138ef4c9bdf2be690800000000000000
-      internalID: -7571905728226531279
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tyre_3
-      rect:
-        serializedVersion: 2
-        x: 88
-        y: 165
-        width: 710
-        height: 317
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: afc09107668895fa0800000000000000
-      internalID: -5811463870596182790
+      spriteID: be0633e098213b3e0800000000000000
+      internalID: -2039265826410635029
       vertices: []
       indices: 
       edges: []
@@ -201,17 +151,14 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e658388be9a5a13459462dba527d8774
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Tyre_1: -6307036934029705316
-      Tyre_2: -7571905728226531279
-      Tyre_3: -5811463870596182790
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

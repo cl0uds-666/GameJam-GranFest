@@ -12,6 +12,7 @@ public class TyreStack : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
+        // Handle the player's speed reduction
         CarControllerRB controller = other.GetComponent<CarControllerRB>();
         if (controller != null)
         {
@@ -24,6 +25,13 @@ public class TyreStack : MonoBehaviour
                 sm.DeductScore(index, 2);
             }
             GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().Bump);
+        }
+
+        // Handle the IdleAutoplay object (if present)
+        IdleAutoplay idleAutoplay = other.GetComponent<IdleAutoplay>();
+        if (idleAutoplay != null)
+        {
+            idleAutoplay.forwardSpeed *= slowMultiplier;  // Reduce speed of the autoplay car when hit by the tyres
         }
 
         // Spawn tyres in radial directions
@@ -43,6 +51,6 @@ public class TyreStack : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        Destroy(gameObject); // Destroy the tyre stack after collision
     }
 }
