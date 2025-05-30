@@ -29,9 +29,18 @@ public class CarControllerRB : MonoBehaviour
     [SerializeField] private Sprite leftSprite;
     [SerializeField] private Sprite rightSprite;
 
+    [Header("assorted avery things")]
+    [SerializeField] private GameObject MainCamera;
+    [SerializeField] private bool isCollidingWithTrigger;
+    [SerializeField] private AudioManager AudioManager;
+
     private SpriteRenderer spriteRenderer;
 
-
+    private void Start()
+    {
+        AudioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        MainCamera = GameObject.Find("Main Camera");
+    }
 
     void Awake()
     {
@@ -84,6 +93,32 @@ public class CarControllerRB : MonoBehaviour
         rb.velocity = transform.up * currentSpeed;
         float rotationAmount = -turnDirection * turnSpeed * Time.fixedDeltaTime;
         rb.MoveRotation(rb.rotation + rotationAmount);
+
+
+        if (isCollidingWithTrigger)
+        {
+            MainCamera.GetComponent<CameraMovement>().CameraTurn(90, gameObject);
+            isCollidingWithTrigger = false;
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if it's a camera turn object
+        if (collision.CompareTag("CameraTurn"))
+        {
+            //finds the degrees to turn from the gameobject of this collider, then puts that into the camera turn function
+            MainCamera.GetComponent<CameraMovement>().CameraTurn(collision.gameObject.GetComponent<TurnInformation>().TurnDegrees, gameObject);
+            isCollidingWithTrigger = true;
+        }
+        //getting the degrees the camera has to turn from the information script
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //on collision plays sound effect from car that got bumped into
+        AudioManager.SFXSource.PlayOneShot(AudioManager.Bump);
     }
 
     public void SetControlEnabled(bool enabled)
