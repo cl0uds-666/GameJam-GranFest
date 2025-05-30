@@ -23,11 +23,26 @@ public class CarControllerRB : MonoBehaviour
     [SerializeField] private bool isSpinning = false;
     private Vector2 spinDirection; // New: direction locked during spin
 
+    [Header("Turning Sprites")]
+    [SerializeField] private Sprite straightSprite;
+    [SerializeField] private Sprite leftSprite;
+    [SerializeField] private Sprite rightSprite;
+
+    private SpriteRenderer spriteRenderer;
+
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        originalSpeed = forwardSpeed; // store initial speed for resets
+        originalSpeed = forwardSpeed;
+
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("No SpriteRenderer found on child of " + name);
+        }
     }
+
 
     private void Start()
     {
@@ -114,20 +129,33 @@ public class CarControllerRB : MonoBehaviour
         spinDirection = rb.velocity.normalized;
     }
 
+    private void UpdateSprite(Sprite sprite)
+    {
+        if (spriteRenderer != null && sprite != null)
+        {
+            spriteRenderer.sprite = sprite;
+        }
+    }
+
+
     public void TurnLeft()
     {
-        //Debug.Log("TurningLeft");
+        Debug.Log("TurningLeft");
         turnDirection = -1f;
+        UpdateSprite(leftSprite);
     }
 
     public void TurnRight()
     {
-        //Debug.Log("TurningRight");
+        Debug.Log("TurningRight");
         turnDirection = 1f;
+        UpdateSprite(rightSprite);
     }
 
     public void StopTurning()
     {
         turnDirection = 0f;
+        UpdateSprite(straightSprite);
     }
+
 }

@@ -1585,6 +1585,9 @@ MonoBehaviour:
   spinTimer: 0
   spinDuration: 2
   isSpinning: 0
+  straightSprite: {fileID: 4566703502053599186, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
+  leftSprite: {fileID: -5763322429936848757, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
+  rightSprite: {fileID: 5452459301827685955, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
 --- !u!50 &198398431
 Rigidbody2D:
   serializedVersion: 4
@@ -3558,6 +3561,9 @@ MonoBehaviour:
   spinTimer: 0
   spinDuration: 2
   isSpinning: 0
+  straightSprite: {fileID: -5881977174939847579, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
+  leftSprite: {fileID: -1392223520819552433, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
+  rightSprite: {fileID: 3710354115940386449, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
 --- !u!50 &593690824
 Rigidbody2D:
   serializedVersion: 4
@@ -8085,6 +8091,9 @@ MonoBehaviour:
   spinTimer: 0
   spinDuration: 2
   isSpinning: 0
+  straightSprite: {fileID: -2912514107373583588, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
+  leftSprite: {fileID: 2337867374667226133, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
+  rightSprite: {fileID: -1995907343522731812, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
 --- !u!50 &1679751831
 Rigidbody2D:
   serializedVersion: 4
@@ -10613,6 +10622,9 @@ MonoBehaviour:
   spinTimer: 0
   spinDuration: 2
   isSpinning: 0
+  straightSprite: {fileID: 3262309964736374429, guid: 38a6982fd48c4dd4eb58af8e694aeb45, type: 3}
+  leftSprite: {fileID: -2572510300428172562, guid: b703a74c1fc4326488714b9ebdaeaaee, type: 3}
+  rightSprite: {fileID: -1919170150605199181, guid: 1021967081fe0fd4ebe95940fc8839ef, type: 3}
 --- !u!50 &2105838301
 Rigidbody2D:
   serializedVersion: 4
