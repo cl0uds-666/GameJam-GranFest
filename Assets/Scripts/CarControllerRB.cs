@@ -17,25 +17,38 @@ public class CarControllerRB : MonoBehaviour
     [SerializeField] private float spinTimer = 0f;
     [SerializeField] private float spinDuration = 0.5f;
     [SerializeField] private bool isSpinning = false;
-    private Vector2 spinDirection; // New: direction locked during spin
+    private Vector2 spinDirection;
+
+    [Header("Grass Slowdown")]
+    [SerializeField] private LayerMask grassLayer; 
+    [SerializeField] private float grassSlowMultiplier = 0.6f; 
+    [SerializeField] private float overlapRadius = 0.3f; 
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        originalSpeed = forwardSpeed; // store initial speed for resets
+        originalSpeed = forwardSpeed;
     }
 
     void FixedUpdate()
     {
         if (!canControl) return;
 
+        float currentSpeed = forwardSpeed;
+
+        // Check if overlapping grass
+        bool onGrass = Physics2D.OverlapCircle(transform.position, overlapRadius, grassLayer);
+        if (onGrass)
+        {
+            currentSpeed *= grassSlowMultiplier;
+        }
 
         if (speedRestoreTimer > 0f)
         {
             speedRestoreTimer -= Time.fixedDeltaTime;
             if (speedRestoreTimer <= 0f)
             {
-                forwardSpeed = originalSpeed; // restore speed
+                forwardSpeed = originalSpeed;
             }
         }
 
@@ -45,16 +58,14 @@ public class CarControllerRB : MonoBehaviour
             if (spinTimer <= 0f)
             {
                 isSpinning = false;
-                rb.angularVelocity = 0f; // stop the spin
+                rb.angularVelocity = 0f;
             }
 
-            // Maintain original direction while spinning
-            rb.velocity = spinDirection * forwardSpeed;
-            return; // skip normal movement/steering
+            rb.velocity = spinDirection * currentSpeed;
+            return;
         }
 
-        // Normal movement
-        rb.velocity = transform.up * forwardSpeed;
+        rb.velocity = transform.up * currentSpeed;
         float rotationAmount = -turnDirection * turnSpeed * Time.fixedDeltaTime;
         rb.MoveRotation(rb.rotation + rotationAmount);
     }
@@ -81,8 +92,6 @@ public class CarControllerRB : MonoBehaviour
         rb.AddTorque(torque, ForceMode2D.Impulse);
         isSpinning = true;
         spinTimer = spinDuration;
-
-        // Lock in current movement direction
         spinDirection = rb.velocity.normalized;
     }
 
