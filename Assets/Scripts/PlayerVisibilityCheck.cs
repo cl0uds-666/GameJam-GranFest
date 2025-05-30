@@ -7,8 +7,12 @@ public class PlayerVisibilityCheck : MonoBehaviour
     private CarControllerRB controller;
     private int playerIndex;
 
+    private AudioManager AudioManager;
+
     private void Start()
     {
+        AudioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
         mainCam = Camera.main;
         rend = GetComponent<Renderer>();
         controller = GetComponent<CarControllerRB>();
@@ -54,6 +58,9 @@ public class PlayerVisibilityCheck : MonoBehaviour
         ScoreManager sm = FindFirstObjectByType<ScoreManager>();
         if (sm != null)
         {
+            //playing explosing sound
+            AudioManager.SFXSource.PlayOneShot(AudioManager.Explode);
+
             sm.PlayerReset(playerIndex);
         }
 
