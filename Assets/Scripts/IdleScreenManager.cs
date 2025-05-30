@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class IdleScreenManager : MonoBehaviour
 {
@@ -74,6 +76,11 @@ public class IdleScreenManager : MonoBehaviour
 
             nextCameraSwitchTime = Time.time + idleSwitchInterval;
         }
+    }
+
+    public void ReturnToIdle()
+    {
+        SceneManager.LoadScene("MainScene"); 
     }
 
 
