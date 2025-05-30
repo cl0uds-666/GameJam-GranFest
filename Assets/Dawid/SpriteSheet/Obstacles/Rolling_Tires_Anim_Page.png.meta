@@ -1,28 +1,16 @@
 fileFormatVersion: 2
-guid: 1021967081fe0fd4ebe95940fc8839ef
+guid: 6b38bcab4b46eb04c841179c7eddf80c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1995907343522731812
-    second: Racing_Cars_Right_Turn_Asset_0
+      213: -6307036934029705316
+    second: Rolling_Tires_Anim_Page_0
   - first:
-      213: 5452459301827685955
-    second: Racing_Cars_Right_Turn_Asset_1
+      213: -7571905728226531279
+    second: Rolling_Tires_Anim_Page_1
   - first:
-      213: 4866625147384294120
-    second: Racing_Cars_Right_Turn_Asset_2
-  - first:
-      213: -1919170150605199181
-    second: Racing_Cars_Right_Turn_Asset_3
-  - first:
-      213: 3710354115940386449
-    second: Racing_Cars_Right_Turn_Asset_4
-  - first:
-      213: 5830952724761818890
-    second: Racing_Cars_Right_Turn_Asset_5
-  - first:
-      213: -3048158518840033757
-    second: Racing_Cars_Right_Turn_Asset_6
+      213: -5811463870596182790
+    second: Rolling_Tires_Anim_Page_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -93,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -114,93 +102,97 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Racing_Cars_Right_Turn_Asset_0
+      name: Rolling_Tires_Anim_Page_0
       rect:
         serializedVersion: 2
-        x: 203
-        y: 569
+        x: 86
+        y: 999
+        width: 712
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9ff3e91357e878a0800000000000000
+      internalID: -6307036934029705316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rolling_Tires_Anim_Page_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 582
+        width: 713
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 138ef4c9bdf2be690800000000000000
+      internalID: -7571905728226531279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rolling_Tires_Anim_Page_2
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 165
         width: 710
-        height: 1463
+        height: 317
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd8ebb888dc1d44e0800000000000000
-      internalID: -1995907343522731812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Racing_Cars_Right_Turn_Asset_1
-      rect:
-        serializedVersion: 2
-        x: 1023
-        y: 565
-        width: 730
-        height: 1463
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 34ea6bdb8d60bab40800000000000000
-      internalID: 5452459301827685955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Racing_Cars_Right_Turn_Asset_2
-      rect:
-        serializedVersion: 2
-        x: 1758
-        y: 569
-        width: 716
-        height: 1463
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b8e4ad8aecbd55e0800000000000000
-      internalID: -1919170150605199181
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Racing_Cars_Right_Turn_Asset_3
-      rect:
-        serializedVersion: 2
-        x: 2513
-        y: 567
-        width: 718
-        height: 1463
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 196098ff863dd7330800000000000000
-      internalID: 3710354115940386449
+      spriteID: afc09107668895fa0800000000000000
+      internalID: -5811463870596182790
       vertices: []
       indices: 
       edges: []
@@ -209,20 +201,14 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: df8848243557f004dae0e7c1375444bf
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Racing_Cars_Right_Turn_Asset_0: -1995907343522731812
-      Racing_Cars_Right_Turn_Asset_1: 5452459301827685955
-      Racing_Cars_Right_Turn_Asset_2: -1919170150605199181
-      Racing_Cars_Right_Turn_Asset_3: 3710354115940386449
-      Racing_Cars_Right_Turn_Asset_5: 5830952724761818890
-      Racing_Cars_Right_Turn_Asset_6: -3048158518840033757
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
