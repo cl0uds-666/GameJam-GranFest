@@ -1986,7 +1986,40 @@ MonoBehaviour:
   turnSpeed: 200
   reachDistance: 0.5
   waypoints:
-  - {fileID: 406026514}
+  - {fileID: 178638318}
+  - {fileID: 882082170}
+  - {fileID: 1971395238}
+  - {fileID: 830719083}
+  - {fileID: 1235149509}
+  - {fileID: 1440908859}
+  - {fileID: 1819608690}
+  - {fileID: 1131901528}
+  - {fileID: 790003421}
+  - {fileID: 900826103}
+  - {fileID: 660674970}
+  - {fileID: 527330414}
+  - {fileID: 1712293451}
+  - {fileID: 862205136}
+  - {fileID: 1891172825}
+  - {fileID: 418131593}
+  - {fileID: 489231076}
+  - {fileID: 1609797030}
+  - {fileID: 2008277453}
+  - {fileID: 1257891618}
+  - {fileID: 729627813}
+  - {fileID: 1777869334}
+  - {fileID: 339032155}
+  - {fileID: 955982786}
+  - {fileID: 1315013851}
+  - {fileID: 1622384738}
+  - {fileID: 93667051}
+  - {fileID: 892893830}
+  - {fileID: 1386187882}
+  - {fileID: 640187749}
+  - {fileID: 1000437640}
+  - {fileID: 1113896084}
+  - {fileID: 1450465007}
+  - {fileID: 2119989535}
 --- !u!114 &198398435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4043,7 +4076,40 @@ MonoBehaviour:
   turnSpeed: 200
   reachDistance: 0.5
   waypoints:
-  - {fileID: 406026514}
+  - {fileID: 1745630985}
+  - {fileID: 1462157308}
+  - {fileID: 831978906}
+  - {fileID: 712239941}
+  - {fileID: 1999177617}
+  - {fileID: 1178862147}
+  - {fileID: 319884783}
+  - {fileID: 867026261}
+  - {fileID: 554834396}
+  - {fileID: 19567940}
+  - {fileID: 1162652174}
+  - {fileID: 730281305}
+  - {fileID: 1325255866}
+  - {fileID: 747443683}
+  - {fileID: 90013451}
+  - {fileID: 1252386642}
+  - {fileID: 1969417733}
+  - {fileID: 828572481}
+  - {fileID: 2017918522}
+  - {fileID: 486821767}
+  - {fileID: 2025295447}
+  - {fileID: 853501552}
+  - {fileID: 454022427}
+  - {fileID: 1175742559}
+  - {fileID: 2009578671}
+  - {fileID: 351777230}
+  - {fileID: 320461814}
+  - {fileID: 740538417}
+  - {fileID: 1375098018}
+  - {fileID: 1030181339}
+  - {fileID: 1553756963}
+  - {fileID: 664491634}
+  - {fileID: 1837121449}
+  - {fileID: 1644192585}
 --- !u!114 &593690828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13614,7 +13680,40 @@ MonoBehaviour:
   turnSpeed: 200
   reachDistance: 0.5
   waypoints:
-  - {fileID: 406026514}
+  - {fileID: 1967230896}
+  - {fileID: 77726928}
+  - {fileID: 725641228}
+  - {fileID: 86099688}
+  - {fileID: 513663486}
+  - {fileID: 1684628617}
+  - {fileID: 990030250}
+  - {fileID: 1429849051}
+  - {fileID: 1911648240}
+  - {fileID: 1938130496}
+  - {fileID: 1069170146}
+  - {fileID: 2010805974}
+  - {fileID: 2118093090}
+  - {fileID: 789344247}
+  - {fileID: 1195506979}
+  - {fileID: 1120498880}
+  - {fileID: 204192056}
+  - {fileID: 85833492}
+  - {fileID: 1533795545}
+  - {fileID: 846174334}
+  - {fileID: 968229175}
+  - {fileID: 669989103}
+  - {fileID: 1909659592}
+  - {fileID: 368297010}
+  - {fileID: 844464736}
+  - {fileID: 1916050377}
+  - {fileID: 858451406}
+  - {fileID: 1414429174}
+  - {fileID: 1423085160}
+  - {fileID: 1810192208}
+  - {fileID: 820706605}
+  - {fileID: 970402154}
+  - {fileID: 1542233225}
+  - {fileID: 1561380999}
 --- !u!114 &2105838305
 MonoBehaviour:
   m_ObjectHideFlags: 0
