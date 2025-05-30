@@ -432,6 +432,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 406026514}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &39583366
 GameObject:
@@ -1446,8 +1449,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   forwardSpeed: 5
   turnSpeed: 200
+=======
+  canControl: 1
+  forwardSpeed: 8
+  turnSpeed: 150
+>>>>>>> Stashed changes
 =======
   canControl: 1
   forwardSpeed: 8
@@ -1981,6 +1990,7 @@ CanvasRenderer:
   m_GameObject: {fileID: 276757688}
   m_CullTransparentMesh: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1001 &293440902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2048,6 +2058,8 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 7d787c529cef53f4cbf164cf01004395, type: 3}
 --- !u!1 &368756309
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!1 &315320587
 >>>>>>> Stashed changes
 GameObject:
@@ -3514,8 +3526,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   forwardSpeed: 5
   turnSpeed: 200
+=======
+  canControl: 1
+  forwardSpeed: 8
+  turnSpeed: 150
+>>>>>>> Stashed changes
 =======
   canControl: 1
   forwardSpeed: 8
@@ -5687,6 +5705,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 53.38}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &1211561449
 GameObject:
@@ -7553,6 +7574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   musicSource: {fileID: 0}
   CarSource1: {fileID: 0}
   CarSource2: {fileID: 0}
@@ -7570,6 +7592,8 @@ MonoBehaviour:
   CrowdCheer3: {fileID: 0}
   IdleStartNoise: {fileID: 0}
 =======
+=======
+>>>>>>> Stashed changes
   musicSource: {fileID: 99816973}
   CarSource1: {fileID: 946313887}
   CarSource2: {fileID: 1399447118}
@@ -7697,8 +7721,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   forwardSpeed: 5
   turnSpeed: 200
+=======
+  canControl: 1
+  forwardSpeed: 8
+  turnSpeed: 150
+>>>>>>> Stashed changes
 =======
   canControl: 1
   forwardSpeed: 8
@@ -8191,9 +8221,12 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 363.00012, y: 130.13998}
   m_SizeDelta: {x: 144.6, y: 30.36}
 =======
+=======
+>>>>>>> Stashed changes
   m_AnchoredPosition: {x: -411.98, y: 185.07}
   m_SizeDelta: {x: 200, y: 50}
 >>>>>>> Stashed changes
@@ -8219,8 +8252,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_text: '1. _ _ _
 =======
+=======
+>>>>>>> Stashed changes
   m_text: 'Credits:
 
 
@@ -8245,12 +8281,16 @@ MonoBehaviour:
 
     Matt Thompson
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 03f3f44ba65746c4391a29c9606d6236, type: 2}
   m_sharedMaterial: {fileID: 2160445271665704945, guid: 03f3f44ba65746c4391a29c9606d6236, type: 2}
+<<<<<<< Updated upstream
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8449,6 +8489,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+=======
+>>>>>>> Stashed changes
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8472,14 +8514,19 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
+<<<<<<< Updated upstream
   m_fontSize: 40
   m_fontSizeBase: 40
+=======
+  m_fontSize: 12
+  m_fontSizeBase: 12
+>>>>>>> Stashed changes
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -9708,8 +9755,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   forwardSpeed: 5
   turnSpeed: 200
+=======
+  canControl: 1
+  forwardSpeed: 8
+  turnSpeed: 150
+>>>>>>> Stashed changes
 =======
   canControl: 1
   forwardSpeed: 8
@@ -10002,7 +10055,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 2147468359}
   m_CullTransparentMesh: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1001 &7979559716058037861
+=======
+--- !u!1001 &2259943065053640638
+>>>>>>> Stashed changes
 =======
 --- !u!1001 &2259943065053640638
 >>>>>>> Stashed changes
@@ -10013,6 +10070,7 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     - target: {fileID: 1343397445547865148, guid: f35e941ee86daf24ea064925cd6afc84, type: 3}
       propertyPath: m_LocalScale.x
@@ -10074,6 +10132,8 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 6.8
 =======
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 170142442907774100, guid: 14c8b1a934bce4c4ab5c35be8095f3c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.07
@@ -10117,12 +10177,16 @@ PrefabInstance:
     - target: {fileID: 2845473927235984343, guid: 14c8b1a934bce4c4ab5c35be8095f3c9, type: 3}
       propertyPath: m_Name
       value: Speed_Up_0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_SourcePrefab: {fileID: 100100000, guid: f35e941ee86daf24ea064925cd6afc84, type: 3}
 --- !u!1001 &8496663770027951453
@@ -10250,6 +10314,9 @@ PrefabInstance:
 =======
   m_SourcePrefab: {fileID: 100100000, guid: 14c8b1a934bce4c4ab5c35be8095f3c9, type: 3}
 >>>>>>> Stashed changes
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: 14c8b1a934bce4c4ab5c35be8095f3c9, type: 3}
+>>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10314,4 +10381,7 @@ SceneRoots:
   - {fileID: 131339828}
   - {fileID: 443874344}
   - {fileID: 1210930208}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

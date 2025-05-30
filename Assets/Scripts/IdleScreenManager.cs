@@ -44,8 +44,11 @@ public class IdleScreenManager : MonoBehaviour
     void Update()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         if (!gameStarted && Input.GetMouseButtonDown(0))
 =======
+=======
+>>>>>>> Stashed changes
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
