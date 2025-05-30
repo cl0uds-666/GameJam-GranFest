@@ -25,6 +25,14 @@ public class OilSpill : MonoBehaviour
                 rb.AddTorque(torque, ForceMode2D.Impulse); // fallback
             }
             Debug.Log($"Oil spill hit! Spinning player with torque: {torque}");
+
+            ScoreManager sm = FindFirstObjectByType<ScoreManager>();
+            int index = PlayerUtils.GetPlayerIndex(other.gameObject);
+            if (sm != null && index >= 0)
+            {
+                sm.DeductScore(index, 2);
+            }
+
         }
 
 
