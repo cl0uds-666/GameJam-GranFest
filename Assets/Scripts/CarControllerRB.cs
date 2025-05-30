@@ -4,6 +4,7 @@ using UnityEngine;
 public class CarControllerRB : MonoBehaviour
 {
     [Header("Movement Settings")]
+    [SerializeField] private bool canControl = true;
     [SerializeField] public float forwardSpeed = 5f;
     [SerializeField] public float turnSpeed = 200f;
 
@@ -11,14 +12,23 @@ public class CarControllerRB : MonoBehaviour
     [SerializeField] public GameObject MainCamera;
 
     private float turnDirection = 0f;
+    private float speedRestoreTimer = 0f;
+    private float originalSpeed;
     private Rigidbody2D rb;
     private bool isCollidingWithTrigger;
 
     private float rotationDegrees;
 
+    [Header("Spin")]
+    [SerializeField] private float spinTimer = 0f;
+    [SerializeField] private float spinDuration = 0.5f;
+    [SerializeField] private bool isSpinning = false;
+    private Vector2 spinDirection; // New: direction locked during spin
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        originalSpeed = forwardSpeed; // store initial speed for resets
     }
 
     private void Start()
@@ -28,10 +38,34 @@ public class CarControllerRB : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Forward movement
-        rb.velocity = transform.up * forwardSpeed;
+        if (!canControl) return;
 
-        // Rotation
+
+        if (speedRestoreTimer > 0f)
+        {
+            speedRestoreTimer -= Time.fixedDeltaTime;
+            if (speedRestoreTimer <= 0f)
+            {
+                forwardSpeed = originalSpeed; // restore speed
+            }
+        }
+
+        if (isSpinning)
+        {
+            spinTimer -= Time.fixedDeltaTime;
+            if (spinTimer <= 0f)
+            {
+                isSpinning = false;
+                rb.angularVelocity = 0f; // stop the spin
+            }
+
+            // Maintain original direction while spinning
+            rb.velocity = spinDirection * forwardSpeed;
+            return; // skip normal movement/steering
+        }
+
+        // Normal movement
+        rb.velocity = transform.up * forwardSpeed;
         float rotationAmount = -turnDirection * turnSpeed * Time.fixedDeltaTime;
         rb.MoveRotation(rb.rotation + rotationAmount);
 
@@ -47,6 +81,33 @@ public class CarControllerRB : MonoBehaviour
     {
         MainCamera.GetComponent<CameraMovement>().CameraTurn(rotationDegrees, gameObject);
         isCollidingWithTrigger = true;
+    }
+
+    public void SetControlEnabled(bool enabled)
+    {
+        canControl = enabled;
+
+        if (!enabled)
+        {
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
+    }
+
+    public void ApplyTemporarySlow(float newSpeed, float duration)
+    {
+        forwardSpeed = newSpeed;
+        speedRestoreTimer = duration;
+    }
+
+    public void ApplySpin(float torque)
+    {
+        rb.AddTorque(torque, ForceMode2D.Impulse);
+        isSpinning = true;
+        spinTimer = spinDuration;
+
+        // Lock in current movement direction
+        spinDirection = rb.velocity.normalized;
     }
 
     public void TurnLeft()

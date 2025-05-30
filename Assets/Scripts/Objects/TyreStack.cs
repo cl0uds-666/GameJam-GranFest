@@ -2,25 +2,47 @@ using UnityEngine;
 
 public class TyreStack : MonoBehaviour
 {
-    [SerializeField] private GameObject rollingTyrePrefab;
-    [SerializeField] private int tyreCount = 4;
-    [SerializeField] private float tyreForce = 3f;
+    [SerializeField] private float slowMultiplier = 0.5f;             // How much to slow the player
+    [SerializeField] private float slowDuration = 1f;                 // Duration of the slow effect
+    [SerializeField] private int numberOfTyres = 6;                   // How many rolling tyres to spawn
+    [SerializeField] private float tyreSpreadForce = 3f;              // Speed at which tyres spread out
+    [SerializeField] private GameObject rollingTyrePrefab;            // Rolling tyre prefab
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
 
-        Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
-        if (rb) rb.velocity *= 0.5f;
-
-        for (int i = 0; i < tyreCount; i++)
+        CarControllerRB controller = other.GetComponent<CarControllerRB>();
+        if (controller != null)
         {
-            Vector2 direction = Random.insideUnitCircle.normalized;
-            GameObject tyre = Instantiate(rollingTyrePrefab, transform.position, Quaternion.identity);
-            Rigidbody2D tyreRb = tyre.GetComponent<Rigidbody2D>();
-            if (tyreRb) tyreRb.AddForce(direction * tyreForce, ForceMode2D.Impulse);
+            float slowedSpeed = Mathf.Max(0.1f, controller.forwardSpeed * slowMultiplier); // avoid 0 or negative speed
+            controller.ApplyTemporarySlow(slowedSpeed, slowDuration);
+            ScoreManager sm = FindFirstObjectByType<ScoreManager>();
+            int index = PlayerUtils.GetPlayerIndex(other.gameObject);
+            if (sm != null && index >= 0)
+            {
+                sm.DeductScore(index, 2);
+            }
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().Bump);
         }
 
-        Destroy(gameObject); 
+        // Spawn tyres in radial directions
+        if (rollingTyrePrefab != null)
+        {
+            for (int i = 0; i < numberOfTyres; i++)
+            {
+                float angle = (360f / numberOfTyres) * i;
+                Vector2 direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+
+                GameObject tyre = Instantiate(rollingTyrePrefab, transform.position, Quaternion.identity);
+                RollingTyre rollingTyre = tyre.GetComponent<RollingTyre>();
+                if (rollingTyre != null)
+                {
+                    rollingTyre.Launch(direction.normalized * tyreSpreadForce);
+                }
+            }
+        }
+
+        Destroy(gameObject);
     }
 }

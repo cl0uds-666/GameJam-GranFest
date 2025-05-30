@@ -1,30 +1,59 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class RollingTyre : MonoBehaviour
 {
-    [SerializeField] private float hitPushForce = 4f;
+    [SerializeField] private float tyreSpeed = 3f;
+    [SerializeField] private float slowdownDuration = 1f;
+    private Rigidbody2D rb;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void Awake()
     {
-        if (!collision.collider.CompareTag("Player")) return;
+        rb = GetComponent<Rigidbody2D>();
+    }
 
-        Vector2 relativeVelocity = GetComponent<Rigidbody2D>().velocity;
-        Vector2 contactDir = collision.contacts[0].normal;
+    public void Launch(Vector2 direction)
+    {
+        rb.velocity = direction.normalized * tyreSpeed;
+    }
 
-        Rigidbody2D playerRb = collision.collider.GetComponent<Rigidbody2D>();
-        if (!playerRb) return;
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
 
-        float angle = Vector2.Angle(contactDir, Vector2.up);
-
-        if (angle < 60f) // Front collision
+        var controller = other.GetComponent<CarControllerRB>();
+        if (controller != null)
         {
-            playerRb.velocity *= 0.5f;
-        }
-        else // Side hit
-        {
-            playerRb.AddForce(relativeVelocity.normalized * hitPushForce, ForceMode2D.Impulse);
+            Vector2 toPlayer = other.transform.position - transform.position;
+            float dot = Vector2.Dot(toPlayer.normalized, other.transform.up);
+
+            if (dot > 0.5f)
+            {
+                // Tyre hits front of car TEMPORARY slowdown
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().Bump);
+                controller.ApplyTemporarySlow(0.5f, 1f);
+            }
+            else
+            {
+                // Tyre hits from side PUSH
+                Rigidbody2D playerRb = other.GetComponent<Rigidbody2D>();
+                if (playerRb)
+                {
+                    GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().Bump);
+                    GameObject.Find("AudioManager").GetComponent<AudioManager>().SFXSource.PlayOneShot(GameObject.Find("AudioManager").GetComponent<AudioManager>().Screech);
+                    playerRb.AddForce(rb.velocity.normalized * 5f, ForceMode2D.Impulse);
+                }
+            }
+
+            ScoreManager sm = FindFirstObjectByType<ScoreManager>();
+            int index = PlayerUtils.GetPlayerIndex(other.gameObject);
+            if (sm != null && index >= 0)
+            {
+                sm.DeductScore(index, 2);
+            }
+
         }
 
-        Destroy(gameObject); // tyres disappear after impact
+        Destroy(gameObject);
     }
 }
