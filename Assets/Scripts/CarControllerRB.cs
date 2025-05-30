@@ -30,22 +30,6 @@ public class CarControllerRB : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-<<<<<<< Updated upstream
-=======
-    [Header("Grass Slowdown")]
-    [SerializeField] private LayerMask grassLayer; 
-    [SerializeField] private float grassSlowMultiplier = 0.6f; 
-    [SerializeField] private float overlapRadius = 0.3f;
-
-    [Header("Turning Sprites")]
-    [SerializeField] private Sprite straightSprite;
-    [SerializeField] private Sprite leftSprite;
-    [SerializeField] private Sprite rightSprite;
-
-    private SpriteRenderer spriteRenderer;
-
-
->>>>>>> Stashed changes
 
     void Awake()
     {
@@ -57,17 +41,13 @@ public class CarControllerRB : MonoBehaviour
         {
             Debug.LogError("No SpriteRenderer found on child of " + name);
         }
-<<<<<<< Updated upstream
     }
 
 
     private void Start()
     {
         MainCamera = GameObject.Find("Main Camera");
-=======
->>>>>>> Stashed changes
     }
-
 
     void FixedUpdate()
     {
@@ -133,16 +113,6 @@ public class CarControllerRB : MonoBehaviour
         }
     }
 
-    private void UpdateSprite(Sprite sprite)
-    {
-        if (spriteRenderer != null && sprite != null)
-        {
-            spriteRenderer.sprite = sprite;
-        }
-    }
-
-
-
     public void ApplyTemporarySlow(float newSpeed, float duration)
     {
         forwardSpeed = newSpeed;
@@ -188,8 +158,4 @@ public class CarControllerRB : MonoBehaviour
         UpdateSprite(straightSprite);
     }
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 }
